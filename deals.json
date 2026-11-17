@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T00:20:00+09:00",
+  "updated_at": "2026-11-18T05:30:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -9,31 +9,83 @@
   },
   "deals": [
     {
+      "id": "extreme-blackmaca-2500-120",
+      "title": "[11/18하루특가] [네이버단독] 익스트림 김종국 블랙마카 2500 120정, 1개",
+      "brand": "익스트림 공식",
+      "badge": "딜 지수 89점",
+      "shipping": "무료배송 (내일도착)",
+      "deadline": "11/18(수) 하루특가 (쿠폰 오늘까지)",
+      "list_price": 45000,
+      "effective_price": 16915,
+      "effective_label": "적립 반영 체감가",
+      "max_discount_price": 19900,
+      "max_discount_label": "쿠폰 적용가 (15,000원 쿠폰)",
+      "reward_note": "적립 최대 2,985원 (비멤버십 2,693원)",
+      "avg_30d": 34900,
+      "avg_label": "상시 판매가",
+      "official_low": 34900,
+      "danawa_low": 34900,
+      "discount_pct": 62,
+      "discount_ref": "정가",
+      "updated_at": "2026-11-18",
+      "source_note": "다나와·공식몰 시세 대조 (2026.11.18 05:30 확인)",
+      "affiliate_url": "https://naver.me/GGGlHZO5",
+      "affiliate_label": "네이버 쇼핑 커넥트",
+      "reasons": [
+        "다나와·공식몰 최저가(34,900원)보다 쿠폰가 19,900원으로 43% 저렴",
+        "적립 최대 2,985원 반영 시 체감가 16,915원 (1개월분 120정)",
+        "리뷰 14,321건 평점 4.9 / 11월 18일 하루특가 무료배송"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 45000
+        },
+        {
+          "label": "다나와·공식몰 최저가",
+          "price": 34900
+        },
+        {
+          "label": "오늘 쿠폰가(누구나)",
+          "price": 19900
+        },
+        {
+          "label": "오늘 체감가(적립 포함)",
+          "price": 16915
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-18",
+          "price": 16915
+        }
+      ]
+    },
+    {
       "id": "orthomol-immun-30-vitalm7",
       "title": "[슈퍼적립] 멀티비타민 오쏘몰 이뮨 30일분 + 바이탈M 7일분 증정 + 쇼핑백",
       "brand": "동아제약 공식",
-      "badge": "딜 지수 87점",
+      "badge": "가격 상승 (05:30)",
       "shipping": "무료배송",
-      "deadline": "네이버 오늘끝딜 11/18 11:00 마감",
+      "deadline": "네이버 오늘끝딜 11/18 11:00 마감 (쿠폰가 88,170원으로 상승)",
       "list_price": 129000,
-      "effective_price": 61345,
+      "effective_price": 74947,
       "effective_label": "멤버십 적립 시 체감가",
-      "max_discount_price": 81990,
+      "max_discount_price": 88170,
       "max_discount_label": "멤버십 쿠폰가",
-      "reward_note": "적립 최대 20,645원",
+      "reward_note": "적립 최대 13,223원",
       "avg_30d": 94900,
       "avg_label": "상시 판매가",
       "official_low": 83000,
       "danawa_low": 76850,
-      "discount_pct": 52,
+      "discount_pct": 42,
       "discount_ref": "정가",
       "updated_at": "2026-11-18",
-      "source_note": "공식몰·다나와 시세 대조 (2026.11.18 00:09 확인)",
+      "source_note": "공식몰·다나와 시세 대조 (2026.11.18 05:30 가격 변동 반영)",
       "affiliate_url": "https://naver.me/GahEVOuY",
       "reasons": [
-        "정가 129,000원 대비 52% 저렴 (멤버십 적립 반영 체감가)",
-        "상시 판매가(94,900원)보다 33,555원 저렴",
-        "다나와 단품 최저(76,850원)보다 15,505원 저렴",
+        "05:30 기준 멤버십 쿠폰가가 81,990원 → 88,170원으로 상승",
+        "적립 최대 13,223원 반영 시 체감가 74,947원 (직전 61,345원 대비 상승)",
         "바이탈M 7일분 + 쇼핑백 증정, 무료배송"
       ],
       "comparison_points": [
@@ -50,12 +102,12 @@
           "price": 76850
         },
         {
-          "label": "멤버십 쿠폰가",
-          "price": 81990
+          "label": "현재 멤버십 쿠폰가",
+          "price": 88170
         },
         {
-          "label": "오늘 체감가(적립 포함)",
-          "price": 61345
+          "label": "현재 체감가(적립 포함)",
+          "price": 74947
         }
       ],
       "history": [
@@ -66,6 +118,10 @@
         {
           "date": "2026-11-18",
           "price": 61345
+        },
+        {
+          "date": "2026-11-18",
+          "price": 74947
         }
       ],
       "affiliate_label": "네이버 브랜드 커넥트"
