@@ -1,13 +1,67 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T05:30:00+09:00",
+  "updated_at": "2026-11-18T08:52:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
-    "disclosure": "이 포스팅은 네이버 쇼핑 커넥트 활동의 일환으로, 판매 발생 시 수수료를 제공받습니다.",
+    "disclosure": "이 페이지의 구매 링크는 네이버 쇼핑 커넥트·쿠팡 파트너스 활동의 일환으로, 판매 발생 시 일정액의 수수료를 제공받습니다.",
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "ahc-vital-golden-collagen-cream-50g",
+      "title": "AHC 바이탈 골든 콜라겐 크림, 50g, 1개",
+      "brand": "AHC",
+      "badge": "딜 지수 86점",
+      "shipping": "무료배송 (로켓배송)",
+      "deadline": "쿠팡 골드박스 특가 (재고 소진 시 종료)",
+      "list_price": 29900,
+      "effective_price": 8700,
+      "effective_label": "골드박스 특가가",
+      "max_discount_price": null,
+      "max_discount_label": null,
+      "reward_note": "쿠페이머니 결제 시 최대 25원 적립",
+      "avg_30d": 9278,
+      "avg_label": "쿠팡 최근 평균가(85일 관측)",
+      "official_low": null,
+      "danawa_low": 11890,
+      "discount_pct": 71,
+      "discount_ref": "정가",
+      "updated_at": "2026-11-18",
+      "source_note": "다나와·에누리 시세 대조 (2026.11.18 08:50 확인)",
+      "affiliate_url": "https://link.coupang.com/a/iLx3WwiEnc",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "정가 29,900원 → 8,700원 (71% 할인)",
+        "다나와 최저 11,890원은 배송비 3,000원 별도(실질 14,890원), 쿠팡은 무료 로켓배송",
+        "에누리 최저 8,710원도 배송비 3,500원 별도(실질 12,210원)",
+        "리뷰 35,142건 · 보습력 '속건조 완화' 72% · 피부 자극 '없음' 97%"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 29900
+        },
+        {
+          "label": "다나와 최저(배송비 별도)",
+          "price": 11890
+        },
+        {
+          "label": "에누리 최저(배송비 별도)",
+          "price": 8710
+        },
+        {
+          "label": "쿠팡 골드박스가",
+          "price": 8700
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-18",
+          "price": 8700
+        }
+      ]
+    },
     {
       "id": "extreme-blackmaca-2500-120",
       "title": "[11/18하루특가] [네이버단독] 익스트림 김종국 블랙마카 2500 120정, 1개",
