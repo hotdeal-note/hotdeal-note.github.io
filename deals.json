@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T05:15:00+09:00",
+  "updated_at": "2026-11-19T07:45:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -9,12 +9,67 @@
   },
   "deals": [
     {
+      "id": "spidy-handwarmer-5200",
+      "title": "스피디 양면발열 손난로 겸 보조배터리 5200mAh, SPE-B2DHWP01, 블루",
+      "brand": "스피디",
+      "badge": "리뷰 3,268 · 평점 4.5",
+      "shipping": "로켓배송 (와우 무료배송 · 19,800원 미만은 배송비)",
+      "deadline": "오늘 주문 시 내일(금) 11/20 도착",
+      "list_price": 29660,
+      "effective_price": 8990,
+      "effective_label": "일반 판매가 (와우 가입 쿠폰가 4,990원은 1회성 제외)",
+      "max_discount_price": 4990,
+      "max_discount_label": "와우 가입 쿠폰가 (최초 1회)",
+      "reward_note": "쿠팡캐시 최대 50원 적립 (쿠페이 머니 결제 시)",
+      "avg_30d": 8691,
+      "avg_label": "최근 3주 평균가",
+      "official_low": null,
+      "danawa_low": 8740,
+      "discount_pct": 69,
+      "discount_ref": "정가",
+      "updated_at": "2026-11-19",
+      "source_note": "다나와·에누리·로우차트 시세 대조 (2026.11.19 07:30 확인)",
+      "affiliate_url": "https://link.coupang.com/a/iM7eNzxlZc",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "정가 29,660원 → 8,990원 (69% 할인). 와우 가입 쿠폰 4,000원은 최초 1회성이라 가격에서 제외",
+        "다나와·에누리 최저 8,740원은 배송비 3,000원 별도(실질 11,740원) — 쿠팡은 로켓배송·와우 무료배송",
+        "5,200mAh 보조배터리 겸용 · 양면발열 3단 온도조절 · C타입 충전 · 잔량 표시, 130g(56×28×91mm)",
+        "상품평 3,268건 평점 4.5, 한 달간 900명 이상 구매",
+        "로우차트 기준 최근 3주 평균 8,691원(역대 최저 6,500원·최고 9,900원) — 지금 가격대는 낮은 편이지만 역대 최저가는 아님"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 29660
+        },
+        {
+          "label": "쿠팡 오늘가",
+          "price": 8990
+        },
+        {
+          "label": "다나와 최저 (배송비 별도)",
+          "price": 8740
+        },
+        {
+          "label": "에누리 최저 (배송비 별도)",
+          "price": 8740
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-19",
+          "price": 8990
+        }
+      ]
+    },
+    {
       "id": "jetstream-sxn150-10p",
       "title": "제트스트림 볼펜 SXN-150 0.5mm, 블랙, 10개",
       "brand": "유니 제트스트림",
       "badge": "리뷰 14,743 · 평점 5.0",
       "shipping": "로켓배송 (19,800원 이상 무료배송 · 와우 무료)",
-      "deadline": "내일(목) 11/19 도착 (오늘 주문 시)",
+      "deadline": "로켓배송 · 주문 시 다음 날 도착", 
       "list_price": null,
       "effective_price": 9560,
       "effective_label": "일반 판매가 (10자루)",
@@ -65,7 +120,7 @@
       "brand": "앱코",
       "badge": "리뷰 10,402 · 평점 5.0",
       "shipping": "로켓배송 (19,800원 이상 무료배송)",
-      "deadline": "내일(목) 11/19 도착 (12시간 내 주문 시)",
+      "deadline": "로켓배송 · 주문 시 다음 날 도착", 
       "list_price": 89000,
       "effective_price": 18900,
       "effective_label": "일반 판매가",
