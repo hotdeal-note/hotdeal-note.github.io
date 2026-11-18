@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T11:45:00+09:00",
+  "updated_at": "2026-11-18T14:10:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -118,28 +118,27 @@
       "id": "orthomol-immun-30-vitalm7",
       "title": "[슈퍼적립] 멀티비타민 오쏘몰 이뮨 30일분 + 바이탈M 7일분 증정 + 쇼핑백",
       "brand": "동아제약 공식",
-      "badge": "가격 상승 (05:30)",
+      "badge": "마감 (상시가 복귀)",
       "shipping": "무료배송",
-      "deadline": "네이버 오늘끝딜 11/18 11:00 마감 (쿠폰가 88,170원으로 상승)",
+      "deadline": "11/18 11:00 오늘끝딜 마감 (현재 94,900원 / 최대할인가 92,050원)",
       "list_price": 129000,
-      "effective_price": 74947,
-      "effective_label": "멤버십 적립 시 체감가",
-      "max_discount_price": 88170,
-      "max_discount_label": "멤버십 쿠폰가",
-      "reward_note": "적립 최대 13,223원",
+      "effective_price": 92050,
+      "effective_label": "현재 최대할인가 (마감 후 상시가)",
+      "max_discount_price": 94900,
+      "max_discount_label": "현재 판매가",
+      "reward_note": "오늘끝딜 종료로 상시가 복귀",
       "avg_30d": 94900,
       "avg_label": "상시 판매가",
       "official_low": 83000,
       "danawa_low": 76850,
-      "discount_pct": 42,
+      "discount_pct": 26,
       "discount_ref": "정가",
       "updated_at": "2026-11-18",
-      "source_note": "공식몰·다나와 시세 대조 (2026.11.18 05:30 가격 변동 반영)",
+      "source_note": "네이버+ 스토어 오늘끝딜 종료 확인 (2026.11.18 14:10 기준)",
       "affiliate_url": "https://naver.me/GahEVOuY",
       "reasons": [
-        "05:30 기준 멤버십 쿠폰가가 81,990원 → 88,170원으로 상승",
-        "적립 최대 13,223원 반영 시 체감가 74,947원 (직전 61,345원 대비 상승)",
-        "바이탈M 7일분 + 쇼핑백 증정, 무료배송"
+        "11/18 11:00 오늘끝딜 종료로 판매가 94,900원(최대할인가 92,050원) 상시가 복귀",
+        "직전 특가(체감 61,345원 → 74,947원) 대비 가격이 크게 올라 현재는 비추천 구간"
       ],
       "comparison_points": [
         {
