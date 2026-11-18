@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T09:55:00+09:00",
+  "updated_at": "2026-11-18T11:45:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,59 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "abko-mk108-keyboard",
+      "title": "앱코 저소음 풀배열 멤브레인 108키 키보드, 블랙, MK108",
+      "brand": "앱코",
+      "badge": "리뷰 10,402 · 평점 5.0",
+      "shipping": "로켓배송 (19,800원 이상 무료배송)",
+      "deadline": "내일(목) 11/19 도착 (12시간 내 주문 시)",
+      "list_price": 89000,
+      "effective_price": 18900,
+      "effective_label": "일반 판매가",
+      "max_discount_price": 14900,
+      "max_discount_label": "와우 가입 쿠폰가",
+      "reward_note": "쿠팡캐시 420원 적립 (쿠페이 머니 결제 시 최대 149원 추가)",
+      "avg_30d": 18900,
+      "avg_label": "최근 60일 평균가",
+      "official_low": 18900,
+      "danawa_low": 18900,
+      "discount_pct": 78,
+      "discount_ref": "정가",
+      "updated_at": "2026-11-18",
+      "source_note": "다나와·오집가격 시세 대조 (2026.11.18 11:45 확인)",
+      "affiliate_url": "https://link.coupang.com/a/iLJ6BWcxmS",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "정가 89,000원 → 18,900원 (78% 할인), 와우 가입 쿠폰 적용 시 14,900원",
+        "다나와 최저가(18,900원)와 같은 가격 — 최근 60일 평균가도 18,900원으로 바닥권 유지",
+        "상품평 10,402건 평점 5.0, 소음 만족도 '생각보다 조용해요' 77%"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 89000
+        },
+        {
+          "label": "일반 판매가",
+          "price": 18900
+        },
+        {
+          "label": "다나와 최저가",
+          "price": 18900
+        },
+        {
+          "label": "와우 가입 쿠폰가",
+          "price": 14900
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-18",
+          "price": 18900
+        }
+      ]
+    },
     {
       "id": "extreme-blackmaca-2500-120",
       "title": "[11/18하루특가] [네이버단독] 익스트림 김종국 블랙마카 2500 120정, 1개",
