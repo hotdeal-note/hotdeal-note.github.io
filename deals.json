@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T14:10:00+09:00",
+  "updated_at": "2026-11-18T15:10:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,57 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "jetstream-sxn150-10p",
+      "title": "제트스트림 볼펜 SXN-150 0.5mm, 블랙, 10개",
+      "brand": "유니 제트스트림",
+      "badge": "리뷰 14,743 · 평점 5.0",
+      "shipping": "로켓배송 (19,800원 이상 무료배송 · 와우 무료)",
+      "deadline": "내일(목) 11/19 도착 (오늘 주문 시)",
+      "list_price": null,
+      "effective_price": 9560,
+      "effective_label": "일반 판매가 (10자루)",
+      "max_discount_price": null,
+      "max_discount_label": null,
+      "reward_note": "쿠팡캐시 최대 56원 적립 (쿠페이 머니 결제 시)",
+      "avg_30d": null,
+      "avg_label": "쿠팡 평균가",
+      "official_low": null,
+      "danawa_low": 10640,
+      "discount_pct": 10,
+      "discount_ref": "다나와 최저가",
+      "updated_at": "2026-11-18",
+      "source_note": "다나와·에누리 시세 대조 (2026.11.18 15:10 확인)",
+      "affiliate_url": "https://link.coupang.com/a/iLY4nPojIG",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "0.5mm 유성 볼펜 — 힘 안 들이고 쓱 써지고 잉크 뭉침·끊김이 적어 급한 메모도 글씨가 깔끔하게 나옴",
+        "스프링칩·트윈볼 채용으로 잉크 직류·역류 방지 (제조사 설명) — 가방에 넣고 다녀도 새는 일이 적음",
+        "10자루 묶음(1자루당 956원) — 책상·가방·사무실에 한 자루씩 나눠 두고 쓰기 좋음",
+        "상품평 14,743건 평점 5.0, 한 달간 4,000명 이상 구매한 스테디 상품",
+        "다나와 최저가 10,640원·에누리 10,650원(배송비 별도)보다 쿠팡이 저렴한 구간"
+      ],
+      "comparison_points": [
+        {
+          "label": "다나와 최저가 (10개입)",
+          "price": 10640
+        },
+        {
+          "label": "에누리 최저가 (배송비 별도)",
+          "price": 10650
+        },
+        {
+          "label": "쿠팡 오늘가 (10개입)",
+          "price": 9560
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-18",
+          "price": 9560
+        }
+      ]
+    },
     {
       "id": "abko-mk108-keyboard",
       "title": "앱코 저소음 풀배열 멤브레인 108키 키보드, 블랙, MK108",
