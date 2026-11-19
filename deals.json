@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T14:32:14+09:00",
+  "updated_at": "2026-11-19T19:36:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,63 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "homeplanet-humidifier-4l",
+      "title": "홈플래닛 초음파 가습기 4L, RD210/화이트",
+      "brand": "홈플래닛",
+      "badge": "리뷰 51,329건 · 최고 81% 만족",
+      "shipping": "로켓배송 · 무료배송 (지금 주문 시 내일(금) 11/20 도착)",
+      "deadline": "",
+      "list_price": 49500,
+      "effective_price": 23900,
+      "effective_label": "일반판매가 (와우 가입 쿠폰 4,000원은 최초 1회성 제외)",
+      "max_discount_price": 19900,
+      "max_discount_label": "와우 가입 쿠폰가 (최초 1회)",
+      "reward_note": "쿠팡캐시 최대 199원 적립 (쿠페이 머니 결제 시)",
+      "avg_30d": null,
+      "avg_label": "",
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": 51,
+      "discount_ref": "정가",
+      "updated_at": "2026-11-19",
+      "source_note": "쿠팡 상품 페이지 직접 확인 (2026.11.19 19:35). 상품평 51,329건 최고 81%·좋음 12%, 한 달간 1만 명 이상 구매",
+      "affiliate_url": "https://link.coupang.com/a/iNW4ZB1vTE",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "정가 49,500원 → 오늘 일반판매가 23,900원 (51% 할인). 와우 가입 쿠폰가 19,900원은 최초 1회성이라 가격에서 제외",
+        "초음파식 4L 대용량 · 연속가습 최대 16시간 · 상부급수식이라 물통을 통째로 들어내지 않고 위에서 물을 부을 수 있음",
+        "상품평 51,329건 최고 81%·좋음 12% (소음 '생각보다 조용해요' 56%, 세척 편리성 '편리해요' 58%, 가습 용량 '아주 넉넉해요' 70%)",
+        "한 달간 1만 명 이상 구매된 홈플래닛 스테디셀러 — 4L 대용량 중 2만원대 초반 가격대",
+        "로켓배송 무료배송, 마감 전 주문 시 내일(금) 11/20 도착"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 49500
+        },
+        {
+          "label": "오늘 일반판매가",
+          "price": 23900
+        },
+        {
+          "label": "와우 가입 쿠폰가 (최초 1회)",
+          "price": 19900
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-19",
+          "price": 23900
+        }
+      ],
+      "threads_url": "https://www.threads.com/@ilililssss/post/Df64Qh6AYJF",
+      "threads_reply_url": "https://www.threads.com/@ilililssss/post/Df64cycgZTh",
+      "site_url": "https://hotdeal-note.github.io/?id=homeplanet-humidifier-4l",
+      "image_path": "downloads/homeplanet-humidifier-4l.jpg",
+      "status": "active",
+      "published_at": "2026-11-19T19:36:00+09:00"
+    },
     {
       "id": "duplex-mini-heater-dp-ak15fh",
       "title": "듀플렉스 미니 온풍기, DP-AK15FH, 아미그린",
