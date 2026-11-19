@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T19:36:00+09:00",
+  "updated_at": "2026-11-19T20:38:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,68 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "belkin-wiz052kr-3in1",
+      "title": "벨킨 Qi2 25W 3in1 모듈형 고속 무선 충전기 WIZ052kr 화이트(WIZ052krWH)",
+      "brand": "벨킨",
+      "badge": "리뷰 3,272건 · 평점 4.85/5 (4점 이상 97%)",
+      "shipping": "무료배송 · 무료교환반품(최초 1회 무료) · 평균 2일 이내 도착 확률 98%",
+      "deadline": "알림 동의 5% 쿠폰 D-3 · 선착순 미키 그립톡 증정",
+      "list_price": 94900,
+      "effective_price": 54900,
+      "effective_label": "즉시할인가 (정가 대비 42% 할인)",
+      "max_discount_price": 53400,
+      "max_discount_label": "알림 동의 5% 쿠폰 적용가 (-1,500원, 누구나 받기 가능)",
+      "reward_note": "멤버십 최대 적립 8,310원(체감 45,090원) / 비멤버십 최대 적립 1,902원",
+      "avg_30d": 63533,
+      "avg_label": "프라이스토리 30일 평균 (2026-07-31~ 추적)",
+      "official_low": 54900,
+      "danawa_low": 62000,
+      "discount_pct": 44,
+      "discount_ref": "정가",
+      "discount_vs_avg_pct": 16,
+      "updated_at": "2026-11-19",
+      "source_note": "네이버 벨킨 공식 브랜드스토어 상품 페이지 직접 확인 (2026.11.19 20:31). 프라이스토리 30일 평균 63,533원·추적 최저 54,900원 / 에누리 타몰 최저 62,000원",
+      "affiliate_url": "https://naver.me/xcg3VeyH",
+      "affiliate_label": "네이버 쇼핑 커넥트",
+      "reasons": [
+        "정가 94,900원 → 즉시할인가 54,900원, 알림 동의 5% 쿠폰(-1,500원)까지 받으면 53,400원",
+        "프라이스토리 추적 최저가 54,900원(2026-07-31~)을 깬 역대 최저가 · 30일 평균 63,533원보다 10,133원 저렴",
+        "에누리 타몰 최저가 62,000원보다 8,600원(-13.9%) 낮음 (타 쇼핑몰 대부분 69,000원)",
+        "폰(Qi2 25W)·워치·이어폰을 한 스탠드에 올리는 모듈형 3in1 — 워치는 기존 정품 충전기를 끼워 쓰는 방식",
+        "45W 고속 어댑터·케이블 기본 포함, 무료배송, 평균 2일 이내 도착 확률 98%, 선착순 미키 그립톡 증정"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 94900
+        },
+        {
+          "label": "즉시할인가",
+          "price": 54900
+        },
+        {
+          "label": "알림 쿠폰 적용가",
+          "price": 53400
+        },
+        {
+          "label": "에누리 타몰 최저",
+          "price": 62000
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-19",
+          "price": 53400
+        }
+      ],
+      "threads_url": "https://www.threads.com/@ilililssss/post/Df6-60eASaE",
+      "threads_reply_url": "https://www.threads.com/@ilililssss/post/Df6_AeQAWKw",
+      "site_url": "https://hotdeal-note.github.io/?id=belkin-wiz052kr-3in1",
+      "image_path": "downloads/belkin-wiz052kr.png",
+      "status": "active",
+      "published_at": "2026-11-19T20:38:00+09:00"
+    },
     {
       "id": "homeplanet-humidifier-4l",
       "title": "홈플래닛 초음파 가습기 4L, RD210/화이트",
