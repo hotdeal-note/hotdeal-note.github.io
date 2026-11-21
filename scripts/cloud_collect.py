@@ -526,8 +526,11 @@ def run(dry_run: bool = False) -> int:
     for name, status in SOURCE_STATUS.items():
         log(f"[source] {name}: {status}")
     if not ok_sources:
-        log("모든 소스 수집 실패 — 파일을 변경하지 않습니다.")
-        return 2
+        # 소스 전체 차단은 흔한 일이 아니지만, 30분짜리 워크플로가 실패 메일을 반복 발송하지 않도록
+        # 실행은 성공으로 끝내고 경고만 남긴다(Actions 화면의 Annotation으로 보인다).
+        log("::warning::모든 소스 수집 실패 — candidates.json을 변경하지 않았습니다. 소스 차단/변경 여부를 확인하세요.")
+        print("ADDED=0", flush=True)
+        return 0
 
     known_ids = {str(item.get("id")) for item in existing if isinstance(item, dict)}
     dup_keys = recent_candidate_keys(existing) + published_keys()
