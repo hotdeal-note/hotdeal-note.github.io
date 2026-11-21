@@ -11,11 +11,11 @@ PC 없이도 30분마다 커뮤니티 핫딜 게시판을 읽어 candidates.json
   * 딜바다 국내핫딜    https://www.dealbada.com/bbs/board.php?bo_table=deal_domestic
   * 어미새 통합 RSS    https://eomisae.co.kr/rss
   * 이토랜드 핫딜      https://etoland.co.kr/bbs/board.php?bo_table=hotdeal
-  * 아카라이브 핫딜    https://arca.live/b/hotdeal
 검증 실패(수집 대상에서 제외, 사유는 README 참고):
   알구몬·루리웹·퀘이사존·에펨코리아·오늘의유머(403/430/timeout), SLR클럽(게시판 폐쇄),
   쿨엔조이·플레이웨어즈·11번가·다나와(10~20초 타임아웃), SSG·롯데온·쿠팡·지마켓(403),
   위메프(도메인 매물), 티몬·무신사(SPA 껍데기), 오늘의집(SSL 오류), 디시 핫딜갤러리(폐쇄),
+  아카라이브(로컬은 200이지만 GitHub Actions 러너 IP는 Cloudflare 403),
   네이버+ 랭킹(JS 렌더링 전용, 오픈API 키 필요).
 
 사용:
@@ -99,7 +99,6 @@ SOURCE_RULES: Dict[str, Dict[str, Any]] = {
     "ppomppu_pmarket": {"min_recs": 3, "min_comments": 9},
     "clien": {"min_recs": 5, "min_comments": 15},
     "etoland": {"min_recs": 5, "min_comments": 10, "min_views": 200},
-    "arca": {"min_recs": 2, "min_comments": 5, "min_views": 900},
     "dealbada": {"min_views": 400},
     "eomisae": {"price_only": True, "min_name_len": 8},
 }
@@ -108,7 +107,6 @@ SOURCE_NAMES = {
     "ppomppu_pmarket": "뽐뿌 쇼핑뽐뿌",
     "clien": "클리앙 알뜰구매",
     "etoland": "이토랜드 핫딜",
-    "arca": "아카라이브 핫딜",
     "dealbada": "딜바다 국내핫딜",
     "eomisae": "어미새",
 }
@@ -575,75 +573,6 @@ def collect_etoland(timeout: float) -> List[Dict[str, Any]]:
 
 
 # ---------------------------------------------------------------------------
-# 소스 7: 아카라이브 핫딜 채널 (서버렌더링 목록)
-# ---------------------------------------------------------------------------
-ARCA_LIST = "https://arca.live/b/hotdeal"
-ARCA_SKIP_CATEGORIES = {"viral"}
-# 데이터센터 IP에서 평범한 요청은 403이 나므로 탐색기 헤더를 더 붙인다.
-ARCA_HEADERS = {
-    "Referer": "https://arca.live/",
-    "Origin": "https://arca.live",
-    "Sec-Fetch-Dest": "document",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "same-origin",
-    "Sec-Fetch-User": "?1",
-    "Upgrade-Insecure-Requests": "1",
-}
-
-
-def parse_arca(page_html: str) -> List[Dict[str, Any]]:
-    items: List[Dict[str, Any]] = []
-    for row in re.split(r'<div class="vrow hybrid', page_html)[1:]:
-        title_match = re.search(r'class="title hybrid-title"[^>]*>(.*?)</a>', row, re.S)
-        link = re.search(r'class="title hybrid-title" href="([^"]+)"', row)
-        if not title_match or not link:
-            continue
-        title = normalize_space(strip_tags(re.sub(r'<span class="info">.*?</span>', "", title_match.group(1), flags=re.S)))
-        post_id = re.search(r"/b/hotdeal/(\d+)", link.group(1))
-        if not title or not post_id:
-            continue
-        category = re.search(r'category=([a-z]+)"', row)
-        if category and category.group(1) in ARCA_SKIP_CATEGORIES:
-            continue
-        price_match = re.search(r'deal-price">\s*([\d,]+)원', row)
-        comment_match = re.search(r'comment-count">\[(\d+)\]', row)
-        rate_match = re.search(r'col-rate">(\d+)<', row)
-        view_match = re.search(r'col-view">(\d+)<', row)
-        store_match = re.search(r'deal-store">([^<]+)<', row)
-        delivery = re.search(r'deal-delivery">\s*([^<\s]+)', row)
-        price = as_int(price_match.group(1)) if price_match else None
-        store = normalize_space(store_match.group(1)) if store_match else ""
-        shipping = normalize_space(delivery.group(1)) if delivery else ""
-        raw_title = title if title.startswith("[") else f"[{store}] {title}" if store else title
-        if price:
-            raw_title += f" ({price:,}원/{shipping})" if shipping else f" ({price:,}원)"
-        items.append({
-            "id": f"arca-{post_id.group(1)}",
-            "source": "arca",
-            "source_name": SOURCE_NAMES["arca"],
-            "raw_title": raw_title,
-            "product_url": "https://arca.live/b/hotdeal/" + post_id.group(1),
-            "description": "",
-            "author": "",
-            "published": "",
-            "recommendations": as_int(rate_match.group(1)) if rate_match else 0,
-            "comments": as_int(comment_match.group(1)) if comment_match else 0,
-            "views": as_int(view_match.group(1)) if view_match else None,
-        })
-    return items
-
-
-def collect_arca(timeout: float) -> List[Dict[str, Any]]:
-    text = fetch(ARCA_LIST, timeout=timeout, extra_headers=ARCA_HEADERS)
-    if "핫딜 채널" not in text:
-        raise RuntimeError("아카라이브 핫딜 페이지가 아님(차단/변경 의심)")
-    items = parse_arca(text)
-    if not items:
-        raise RuntimeError("목록 파싱 결과 0건(구조 변경 의심)")
-    return items
-
-
-# ---------------------------------------------------------------------------
 # 후보 생성·병합
 # ---------------------------------------------------------------------------
 def similarity(a: str, b: str) -> float:
@@ -857,7 +786,6 @@ def collect_all(timeout: float) -> List[Dict[str, Any]]:
         ("ppomppu_pmarket", collect_ppomppu_pmarket),
         ("clien", collect_clien),
         ("etoland", collect_etoland),
-        ("arca", collect_arca),
         ("dealbada", collect_dealbada),
         ("eomisae", collect_eomisae),
     )
@@ -986,17 +914,6 @@ CLIEN_SAMPLE = """<div class="list_item symph_row jirum  " data-role="list-row" 
 ETOLAND_SAMPLE = """<ul><li class="flex gap-3 px-4 py-2 hover:bg-[#feffd792]"><a class="group flex w-full gap-3 overflow-hidden" href="/b/hotdeal/view/%EC%84%A0%EC%B0%A9%EC%88%9C%ED%8A%B9%EA%B0%80-%ED%8D%BC%EB%8B%88%ED%8A%B8-9599592"><div class="item-image h-16 w-20 min-w-20 overflow-hidden"><img data-src="https://btcdn.etoland.co.kr/static/media/board/a.png" alt="x"/></div><div class="flex flex-1 flex-col overflow-hidden"><span class="inline-flex items-center gap-1 font-medium"><b class="max-w-fit flex-1 truncate font-semibold text-[17px] text-pressed">선착순특가) 퍼니트 역가수치 파인애플 브로멜라인 효소 3g 100포</b><span class="caption-m font-bold text-comment">(<!-- -->10<!-- -->)</span></span><div class="label-s flex flex-wrap items-center gap-1.5 text-etoText-2"><span class="body-m font-bold text-comment">24,270원</span><span class="text-etoText-3">·</span><span class="inline-flex items-center gap-0.5">토스</span><span class="text-etoText-3">·</span><span class="inline-flex items-center gap-0.5">무료배송</span></div><div class="caption-m flex flex-wrap items-center gap-1 text-etoText-4"><span>식품</span><span class="text-etoDivider-1">|</span><span>1시간전</span><span class="text-etoDivider-1">|</span><span class="text-etoText-3">토스쇼핑</span><span class="text-etoDivider-1">|</span><span class="inline-flex items-center gap-0.5"><svg class="lucide lucide-heart size-3.5"><path d="M2 9.5"></path></svg>7</span><span class="text-etoDivider-1">|</span><span class="inline-flex items-center gap-0.5"><svg class="lucide lucide-eye size-3.5"><circle cx="12"></circle></svg>281</span></div></div></a></li>
 <li class="flex gap-3 px-4 py-2 hover:bg-[#feffd792]"><a class="group flex w-full gap-3 overflow-hidden" href="/b/hotdeal/view/%EB%84%A4%EC%9D%B4%EB%B2%84%ED%8E%98%EC%9D%B4-9599500"><div class="flex flex-1 flex-col overflow-hidden"><span class="inline-flex items-center gap-1 font-medium"><b class="max-w-fit flex-1 truncate font-semibold text-[17px] text-pressed">[네이버페이] 일일적립, 클릭 3원</b><span class="caption-m font-bold text-comment">(<!-- -->20<!-- -->)</span></span><div class="label-s flex flex-wrap items-center gap-1.5 text-etoText-2"></div><div class="caption-m flex flex-wrap items-center gap-1 text-etoText-4"><span>포인트</span><span class="text-etoDivider-1">|</span><span>3시간전</span></div></div></a></li></ul>"""
 
-ARCA_SAMPLE = """<div class="vrow hybrid"><div class="vrow-inner"><div class="vrow-top deal"><span class="vcol col-id"><span>61744</span></span><span class="vcol col-title"><span class="badges"><span class="deal-store">토스쇼핑</span>&nbsp;<a class="badge" href="/b/hotdeal?category=food">식품</a></span><a class="title hybrid-title" href="/b/hotdeal/189882969?p=1"><span class="media-icon bi-images"></span>
-                            오뚜기 진라면 순한맛, 120g, 5개입, 8개
-                            <span class="info"><span class="comment-count">[10]</span></span></a></span></div><a class="title hybrid-bottom" href="/b/hotdeal/189882969?p=1"><div class="vrow-bottom deal"><span class="deal-price">18,900원
-    </span><img src="/static/assets/images/shipping.svg" width="16"><span class="deal-delivery">무료
-    </span><span class="vcol col-author"><span class="user-info"><span>ㅇㅇ</span></span></span><span class="vcol col-time"><time datetime="2026-11-21T15:58:53.000Z">28분전</time></span><span class="vcol col-view">465</span><span class="vcol col-rate">4</span></div></a></div></div>
-<div class="vrow hybrid"><div class="vrow-inner"><div class="vrow-top deal"><span class="vcol col-id"><span>61743</span></span><span class="vcol col-title"><span class="badges"><span class="deal-store">쿠팡</span><a class="badge" href="/b/hotdeal?category=viral">바이럴</a></span><a class="title hybrid-title" href="/b/hotdeal/189881134?p=1">
-                            대건명가 돼지국밥 630g 5팩 예약발송
-                            <span class="info"><span class="comment-count">[10]</span></span></a></span></div><a class="title hybrid-bottom" href="/b/hotdeal/189881134?p=1"><div class="vrow-bottom deal"><span class="deal-price">19,510원
-    </span><span class="deal-delivery">무료
-    </span><span class="vcol col-view">931</span><span class="vcol col-rate">1</span></div></a></div></div>"""
-
 DEALBADA_SAMPLE = """<table><tr class="">
 <td class="td_num">
 33315            </td>
@@ -1098,17 +1015,6 @@ def selftest() -> int:
         no_price, why = build_candidate(etoland[1], dict())
         check("가격 없는 포인트 글 제외", no_price is None and why == "가격 표기 없음", why)
 
-    arca = parse_arca(ARCA_SAMPLE)
-    check("아카라이브 1건 파싱(바이럴 제외)", len(arca) == 1, str(len(arca)))
-    if arca:
-        row = arca[0]
-        check("아카라이브 추천/댓글/조회",
-              row["recommendations"] == 4 and row["comments"] == 10 and row["views"] == 465, str(row))
-        check("아카라이브 제목 합성", row["raw_title"].startswith("[토스쇼핑] 오뚜기 진라면") and row["raw_title"].endswith("(18,900원/무료)"),
-              row["raw_title"])
-        arca_ok, why = build_candidate(row, dict())
-        check("아카라이브 후보 통과", arca_ok is not None and why == "통과", why)
-
     dealbada = parse_dealbada(DEALBADA_SAMPLE)
     check("딜바다 1건 파싱(공지 제외)", len(dealbada) == 1, str(len(dealbada)))
     if dealbada:
@@ -1139,13 +1045,13 @@ def selftest() -> int:
         {"source": "ppomppu", "community": {"recommendations": 9, "comments": 0}},
         {"source": "ppomppu", "community": {"recommendations": 8, "comments": 0}},
         {"source": "ppomppu", "community": {"recommendations": 7, "comments": 0}},
-        {"source": "arca", "community": {"recommendations": 4, "comments": 10}},
+        {"source": "dealbada", "community": {"recommendations": 0, "comments": 0, "views": 900}},
         {"source": "etoland", "community": {"recommendations": 3, "comments": 4}},
     ]
     balanced = pick_balanced(sample_candidates, 3, 2)
     check("괄호 없는 끝가격 제거", clean_title("프링글스 치즈맛, 110g, 12개 16,320원") == "프링글스 치즈맛, 110g, 12개",
           clean_title("프링글스 치즈맛, 110g, 12개 16,320원"))
-    check("소스 분산 선택", [c["source"] for c in balanced] == ["ppomppu", "arca", "etoland"],
+    check("소스 분산 선택", [c["source"] for c in balanced] == ["ppomppu", "etoland", "dealbada"],
           str([c["source"] for c in balanced]))
     check("한 소스 상한", sum(1 for c in pick_balanced(sample_candidates, 4, 2) if c["source"] == "ppomppu") == 2,
           str(pick_balanced(sample_candidates, 4, 2)))

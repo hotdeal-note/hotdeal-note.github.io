@@ -9,7 +9,7 @@ python3 scripts/cloud_collect.py            # 수집 + 병합
 python3 scripts/cloud_collect.py --dry-run  # 파일을 쓰지 않고 결과만 확인
 python3 scripts/cloud_collect.py --selftest # 네트워크 없이 파서 단위 검증
 ```
-- 소스(2026-11-22 실제 검증, 7곳):
+- 소스(2026-11-22 실제 검증, 6곳):
 
   | 소스 | 주소 | 모으는 값 | 품질 기준 |
   |---|---|---|---|
@@ -17,7 +17,6 @@ python3 scripts/cloud_collect.py --selftest # 네트워크 없이 파서 단위 
   | 뽐뿌 쇼핑뽐뿌 | `ppomppu.co.kr/rss.php?id=pmarket` | 제목+가격, 추천·댓글 | 추천 3 또는 댓글 9 |
   | 클리앙 알뜰구매 | `clien.net/service/board/jirum` | 제목+가격, 추천·댓글 | 추천 5 또는 댓글 15 |
   | 이토랜드 핫딜 | `etoland.co.kr/bbs/board.php?bo_table=hotdeal` | 제목·가격·몰·추천·댓글·조회 | 추천 5·댓글 10·조회 200 중 하나 |
-  | 아카라이브 핫딜 | `arca.live/b/hotdeal` | 제목·가격·몰·추천·댓글·조회 | 추천 2·댓글 5·조회 900 중 하나 |
   | 딜바다 국내핫딜 | `dealbada.com/bbs/board.php?bo_table=deal_domestic` | 제목(가격 포함)·조회 | 조회 400 이상 |
   | 어미새 | `eomisae.co.kr/rss` | 제목(가격 포함) | 추천 없음 → 가격+상품명 8자 이상, 결제인증·잡담·해외 글 제외 |
 
@@ -33,6 +32,8 @@ python3 scripts/cloud_collect.py --selftest # 네트워크 없이 파서 단위 
 - 403/430/폐쇄: SSG·롯데온·쿠팡·지마켓·루리웹·에펨코리아·오늘의유머·뽐뿌 웹게시판(HTML)·디시 핫딜갤러리
 - 서비스 종료/매물: 위메프(도메인 판매), SLR클럽(지름게시판 폐쇄)
 - JS 렌더링 껍데기: 티몬·무신사·오늘의집(SSL 오류), 네이버+ 랭킹(오픈API 키 필요)
+- 로컬은 200이지만 GitHub Actions 러너 IP에서 Cloudflare 403: 아카라이브 핫딜(`arca.live/b/hotdeal`)
+  — 파서까지 만들어 봤지만 러너에서 한 번도 수집되지 않아 넣지 않았습니다.
 - 성격 부적합: 뽐뿌 휴대폰뽐뿌·쿠폰게시판(판매점 광고·포인트 이벤트), 뽐뿌 PC/인터넷(질문 게시판), 더쿠 HOT(쇼핑 글 아님)
 
 ## 워크플로 설치
