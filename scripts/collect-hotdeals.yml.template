@@ -1,0 +1,65 @@
+name: 핫딜 후보 수집 (클라우드)
+
+on:
+  schedule:
+    # 30분마다. GitHub 무료 러너는 혼잡할 때 몇 분 늦게 시작할 수 있습니다.
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-hotdeals
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 저장소 받기
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 파이썬 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 수집기 자체 검증
+        run: python3 scripts/cloud_collect.py --selftest
+
+      - name: 핫딜 수집
+        id: collect
+        run: |
+          set -u
+          OUT=$(python3 scripts/cloud_collect.py)
+          printf '%s\n' "$OUT"
+          ADDED=$(printf '%s\n' "$OUT" | sed -n 's/^ADDED=//p' | tail -1)
+          echo "added=${ADDED:-0}" >> "$GITHUB_OUTPUT"
+
+      - name: 바뀐 내용이 있을 때만 커밋·푸시
+        if: steps.collect.outputs.added != '0'
+        run: |
+          set -eu
+          git config user.name "hotdeal-note bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add candidates.json
+          if [ -f data/price-history.json ]; then git add data/price-history.json; fi
+          if git diff --cached --quiet; then
+            echo "커밋할 변경 없음"
+            exit 0
+          fi
+          git commit -m "chore: 클라우드 핫딜 후보 ${{ steps.collect.outputs.added }}건 추가 ($(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M'))"
+          for i in 1 2 3; do
+            if git push; then
+              echo "푸시 완료"
+              exit 0
+            fi
+            echo "푸시 재시도 ($i)"
+            git pull --rebase --autostash origin main
+          done
+          echo "푸시 실패" >&2
+          exit 1
