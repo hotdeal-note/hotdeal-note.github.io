@@ -165,18 +165,30 @@ def excluded_reason(title: str) -> Optional[str]:
 # 제목 파싱: "[몰] 상품명 (17,900원/무료)" 형태
 # ---------------------------------------------------------------------------
 PRICE_PATTERN = re.compile(r"([0-9][0-9,\.]{2,12})\s*원")
+# "정가 34,000원 → 19,800원", "2개 19,800원 (개당 9,900원)" 에서 판매가가 아닌 숫자
+PRICE_NOISE_PREFIX = ("정가", "소비자가", "원가", "개당", "1개당", "팩당", "장당", "ml당", "g당", "최대")
 MALL_PATTERN = re.compile(r"^\s*[\[\(【]([^\]\)】]{1,20})[\]\)】]\s*")
 CURRENCY_FOREIGN = re.compile(r"(?:US)?\$\s?[0-9]|[0-9]\s?(?:USD|엔|위안)")
 
 
 def parse_price(title: str) -> Tuple[Optional[int], str, str]:
-    """(가격, 통화메모, 배송메모)를 돌려준다."""
-    candidates = []
+    """(가격, 가격 표기 방식, 배송 메모)를 돌려준다.
+
+    정가·개당 가격처럼 판매가가 아닌 숫자는 건너뛰고, 남은 마지막 금액을 판매가로 본다.
+    """
+    prices = []
     for match in PRICE_PATTERN.finditer(title):
         value = as_int(match.group(1).replace(".", ""))
-        if value:
-            candidates.append(value)
-    price = min(candidates) if candidates else None
+        if not value:
+            continue
+        prefix = title[max(0, match.start() - 6):match.start()]
+        if any(noise in prefix for noise in PRICE_NOISE_PREFIX):
+            continue
+        prices.append(value)
+    if not prices:
+        prices = [as_int(m.group(1).replace(".", "")) for m in PRICE_PATTERN.finditer(title)]
+        prices = [value for value in prices if value]
+    price = prices[-1] if prices else None
     shipping = ""
     lowered = title.lower()
     if "무료배송" in title or "무배" in title or "/무료" in title or "무료" in title:
@@ -669,6 +681,10 @@ def selftest() -> int:
 
     check("상품명 중복 판정", similarity(product_key("국산 면양말 10켤레"), product_key("[G마켓] 국산 면양말 10켤레")) > 0.95)
     check("다른 상품 비중복", similarity(product_key("국산 면양말 10켤레"), product_key("스테인리스 텀블러 600ml")) < 0.7)
+    check("정가 숫자 무시", parse_price("[몰] 무선청소기 정가 349,000원 → 199,000원 (무료)")[0] == 199000,
+          str(parse_price("[몰] 무선청소기 정가 349,000원 → 199,000원 (무료)")))
+    check("개당 가격 무시", parse_price("[몰] 계란 2판 19,800원 (개당 9,900원)")[0] == 19800,
+          str(parse_price("[몰] 계란 2판 19,800원 (개당 9,900원)")))
 
     log("RESULT " + ("OK" if not failures else f"FAIL {failures}"))
     return 0 if not failures else 1
