@@ -253,6 +253,8 @@ def clean_title(title: str) -> str:
             continue
         break
     title = EFFECTIVE_LABEL.sub("", title)
+    # 가격을 떼고 남은 끝 쉼표·구분자 정리 ("... 240G 4개,")
+    title = re.sub(r"[\s,·/\-+~]+$", "", title)
     return title.strip()
 
 
