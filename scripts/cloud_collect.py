@@ -772,12 +772,25 @@ def pick_balanced(accepted: List[Dict[str, Any]], max_new: int, per_source_max: 
             if round_index < len(bucket) and len(chosen) < max_new:
                 chosen.append(bucket[round_index])
     if len(chosen) < max_new:
+        # 남은 자리는 소스 상한을 지키면서 채우고, 그래도 모자라면 상한을 풀어 마저 채운다.
         picked = {id(item) for item in chosen}
+        counts: Dict[str, int] = {}
+        for item in chosen:
+            counts[item["source"]] = counts.get(item["source"], 0) + 1
+        for candidate in accepted:
+            if len(chosen) >= max_new:
+                break
+            if id(candidate) in picked or counts.get(candidate["source"], 0) >= per_source_max:
+                continue
+            chosen.append(candidate)
+            picked.add(id(candidate))
+            counts[candidate["source"]] = counts.get(candidate["source"], 0) + 1
         for candidate in accepted:
             if len(chosen) >= max_new:
                 break
             if id(candidate) not in picked:
                 chosen.append(candidate)
+                picked.add(id(candidate))
     return chosen
 
 
@@ -1057,6 +1070,17 @@ def selftest() -> int:
           str([c["source"] for c in balanced]))
     check("한 소스 상한", sum(1 for c in pick_balanced(sample_candidates, 4, 2) if c["source"] == "ppomppu") == 2,
           str(pick_balanced(sample_candidates, 4, 2)))
+    uneven = [
+        {"source": "etoland", "community": {"recommendations": 9}},
+        {"source": "etoland", "community": {"recommendations": 8}},
+        {"source": "etoland", "community": {"recommendations": 7}},
+        {"source": "dealbada", "community": {"recommendations": 0}},
+        {"source": "dealbada", "community": {"recommendations": 0}},
+        {"source": "eomisae", "community": {"recommendations": 0}},
+    ]
+    uneven_pick = pick_balanced(uneven, 5, 2)
+    check("빈자리 채울 때도 소스 상한", sum(1 for c in uneven_pick if c["source"] == "etoland") <= 2,
+          str([c["source"] for c in uneven_pick]))
 
     log("RESULT " + ("OK" if not failures else f"FAIL {failures}"))
     return 0 if not failures else 1
