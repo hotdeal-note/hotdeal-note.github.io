@@ -102,6 +102,7 @@ SOURCE_RULES: Dict[str, Dict[str, Any]] = {
     "dealbada": {"min_views": 400},
     "eomisae": {"price_only": True, "min_name_len": 8},
 }
+LIST_PRICE_SOURCES = {"etoland", "dealbada"}
 SOURCE_NAMES = {
     "ppomppu": "뽐뿌 게시판",
     "ppomppu_pmarket": "뽐뿌 쇼핑뽐뿌",
@@ -437,7 +438,7 @@ def parse_dealbada(page_html: str) -> List[Dict[str, Any]]:
             "source": "dealbada",
             "source_name": SOURCE_NAMES["dealbada"],
             "raw_title": title,
-            "product_url": "https:" + link.group(1) if link.group(1).startswith("//") else link.group(1),
+            "product_url": html_mod.unescape("https:" + link.group(1) if link.group(1).startswith("//") else link.group(1)),
             "description": "",
             "author": "",
             "published": time_match.group(1).strip() if time_match else "",
@@ -643,6 +644,8 @@ def build_candidate(raw: Dict[str, Any], history: Dict[str, Any]) -> Tuple[Optio
     if reason:
         return None, f"제외 키워드({reason})"
     price, price_note, shipping = parse_price(title)
+    if raw["source"] in LIST_PRICE_SOURCES:
+        price_note = "게시판 목록 표기 가격"
     if price is None:
         return None, "가격 표기 없음"
     if price < MIN_PRICE or price > MAX_PRICE:
