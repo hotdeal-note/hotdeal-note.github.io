@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T20:08:00+09:00",
+  "updated_at": "2026-11-21T22:35:30+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,62 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "sauberkugel-blackpearl",
+      "title": "자우버쿠겔 블랙펄 가방청소볼, 1개",
+      "brand": "자우버쿠겔",
+      "badge": "리뷰 103건 · 최고 81%·좋음 11% (93명 만족)",
+      "shipping": "무료배송(판매자 프레베자) · 내일(일) 11/22 도착",
+      "deadline": "가방관리 아이디어템 · 정가 대비 41% 할인",
+      "list_price": 34000,
+      "effective_price": 19800,
+      "effective_label": "일반판매가 (정가 대비 41% 할인 · 와우 가입 쿠폰 4,000원은 최초 1회성 제외)",
+      "max_discount_price": 15800,
+      "max_discount_label": "와우 가입 쿠폰가 (최초 1회)",
+      "reward_note": "쿠팡캐시 최대 158원 적립 (쿠페이 머니 결제 시)",
+      "avg_30d": null,
+      "avg_label": null,
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": 41,
+      "discount_ref": "정가",
+      "discount_vs_avg_pct": null,
+      "updated_at": "2026-11-21",
+      "source_note": "쿠팡 상품 페이지 직접 확인 (2026.11.21 22:34). 정가 34,000원 → 일반판매가 19,800원(41% 할인). 와우 가입 쿠폰 4,000원 적용 시 15,800원은 최초 1회성이라 체감가에서 제외. 판매자 프레베자, 무료배송, 내일(일) 11/22 도착. 타몰(다나와·에누리) 시세는 대조하지 않음",
+      "affiliate_url": "https://link.coupang.com/a/iRtSkhbBXo",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "정가 34,000원에서 41% 내린 19,800원, 무료배송",
+        "가방 안에 넣어 두기만 하면 굴러다니며 먼지·부스러기·화장품 가루를 붙여 오는 방식이라 따로 청소할 일이 줄어듦",
+        "50만 회 세척 재사용(반영구) — 껍질을 눌러 열고 안쪽 볼만 흐르는 물에 헹구면 됨",
+        "바깥 껍질이 단단해 터질 걱정이 적고 무게도 거의 느껴지지 않는다는 후기 다수",
+        "리뷰 103건 중 최고 81%·좋음 11%(93명 만족), 편리성 '아주 편리해요' 67%",
+        "내일(일) 11/22 도착 — 파우치·가방 정리용 아이디어템으로 가격 부담이 적음"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 34000
+        },
+        {
+          "label": "일반판매가",
+          "price": 19800
+        },
+        {
+          "label": "와우 가입 쿠폰가(최초 1회)",
+          "price": 15800
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-21",
+          "price": 19800
+        }
+      ],
+      "image_path": "downloads/sauberkugel-blackpearl.png",
+      "status": "active",
+      "published_at": "2026-11-21T22:35:30+09:00"
+    },
     {
       "id": "amazing-oat-original-24",
       "title": "어메이징오트 오리지널 혼합음료, 190ml, 24개",
