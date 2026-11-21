@@ -6,10 +6,17 @@ PC 없이도 30분마다 커뮤니티 핫딜 게시판을 읽어 candidates.json
 
 검증된 소스(2026-11-22 이 환경에서 HTTP 200 + 파싱 성공):
   * 뽐뿌 게시판 RSS   https://www.ppomppu.co.kr/rss.php?id=ppomppu
+  * 뽐뿌 쇼핑뽐뿌 RSS  https://www.ppomppu.co.kr/rss.php?id=pmarket
   * 클리앙 알뜰구매    https://www.clien.net/service/board/jirum
+  * 딜바다 국내핫딜    https://www.dealbada.com/bbs/board.php?bo_table=deal_domestic
+  * 어미새 통합 RSS    https://eomisae.co.kr/rss
+  * 이토랜드 핫딜      https://etoland.co.kr/bbs/board.php?bo_table=hotdeal
+  * 아카라이브 핫딜    https://arca.live/b/hotdeal
 검증 실패(수집 대상에서 제외, 사유는 README 참고):
   알구몬·루리웹·퀘이사존·에펨코리아·오늘의유머(403/430/timeout), SLR클럽(게시판 폐쇄),
-  네이버+ 랭킹(JS 렌더링 전용, 오픈API 키 필요), 다나와(응답 20초 이상).
+  쿨엔조이·플레이웨어즈·11번가·다나와(10~20초 타임아웃), SSG·롯데온·쿠팡·지마켓(403),
+  위메프(도메인 매물), 티몬·무신사(SPA 껍데기), 오늘의집(SSL 오류), 디시 핫딜갤러리(폐쇄),
+  네이버+ 랭킹(JS 렌더링 전용, 오픈API 키 필요).
 
 사용:
   python3 scripts/cloud_collect.py            # 실제 수집·병합
@@ -80,8 +87,31 @@ EXCLUDE_NON_PRODUCT = [
 # 품질 기준(후보가 너무 많이 쌓여 피클 검수 사용량이 커지는 것을 막는다)
 MIN_PRICE = 1000
 MAX_PRICE = 3_000_000
-DEFAULT_MIN_RECS = {"ppomppu": 3, "clien": 5}
 DEFAULT_MAX_NEW = 6
+PER_SOURCE_MAX = 2
+
+# 소스별 품질 기준.
+#   min_recs / min_comments: 추천이 min_recs 이상이거나 댓글이 min_comments 이상이면 통과
+#   min_views: 조회수만 공개되는 게시판의 대체 기준(추천·댓글과 OR)
+#   price_only: 추천·댓글이 없는 피드(RSS) — 가격 표기 + 상품명 길이로만 거른다
+SOURCE_RULES: Dict[str, Dict[str, Any]] = {
+    "ppomppu": {"min_recs": 3, "min_comments": 9},
+    "ppomppu_pmarket": {"min_recs": 3, "min_comments": 9},
+    "clien": {"min_recs": 5, "min_comments": 15},
+    "etoland": {"min_recs": 5, "min_comments": 10, "min_views": 200},
+    "arca": {"min_recs": 2, "min_comments": 5, "min_views": 900},
+    "dealbada": {"min_views": 400},
+    "eomisae": {"price_only": True, "min_name_len": 8},
+}
+SOURCE_NAMES = {
+    "ppomppu": "뽐뿌 게시판",
+    "ppomppu_pmarket": "뽐뿌 쇼핑뽐뿌",
+    "clien": "클리앙 알뜰구매",
+    "etoland": "이토랜드 핫딜",
+    "arca": "아카라이브 핫딜",
+    "dealbada": "딜바다 국내핫딜",
+    "eomisae": "어미새",
+}
 DUP_WINDOW_DAYS = 3
 DUP_RATIO = 0.85
 
@@ -202,6 +232,8 @@ def parse_price(title: str) -> Tuple[Optional[int], str, str]:
 
 
 TRAILING_PRICE_BLOCK = re.compile(r"\s*[\(\[][^\(\)\[\]]*[0-9][0-9,\.]*\s*원[^\(\)\[\]]*[\)\]]\s*$")
+# 딜바다·어미새처럼 가색을 괄호 없이 뒤에 붙인 제목: "... 27,900원 / 무배"
+TRAILING_BARE_PRICE = re.compile(r"\s*[0-9][0-9,]{2,}\s*원\s*(?:[~/·,]\s*)?(?:무배|무료배송|무료)?\s*$")
 EFFECTIVE_LABEL = re.compile(r"^[\[\(]?\s*(?:최종할인가|할인가|특가|최저가)\s*[\)\]]?\s*")
 
 
@@ -211,11 +243,24 @@ def clean_title(title: str) -> str:
     title = MALL_PATTERN.sub("", title).strip()
     for _ in range(3):
         stripped = TRAILING_PRICE_BLOCK.sub("", title).strip()
-        if stripped == title:
-            break
-        title = stripped
+        if stripped != title and len(product_key_core(stripped)) >= 3:
+            title = stripped
+            continue
+        stripped = TRAILING_BARE_PRICE.sub("", title).strip()
+        if stripped != title and len(product_key_core(stripped)) >= 3:
+            title = stripped
+            continue
+        break
     title = EFFECTIVE_LABEL.sub("", title)
     return title.strip()
+
+
+def product_key_core(text: str) -> str:
+    """상품명 글자만 남긴 비교용 문자열(가격·수량·기호 제거, 순환 호출 없이)."""
+    text = re.sub(r"\([^)]*\)", " ", text or "")
+    text = re.sub(r"[\[\]{}<>()/,·\-+~!@#$%^&*_=|\"'`]", " ", text)
+    text = re.sub(r"[0-9]+\s*(?:원|개|팩|매입|입|ml|l|g|kg|mm|cm|개입)", " ", text, flags=re.I)
+    return normalize_space(text).lower()
 
 
 def split_mall(title: str) -> Tuple[str, str]:
@@ -226,11 +271,7 @@ def split_mall(title: str) -> Tuple[str, str]:
 
 def product_key(title: str) -> str:
     """중복 판정용 상품명 키(몰 이름·가격·기호 제거)."""
-    text = clean_title(title)
-    text = re.sub(r"\([^)]*\)", " ", text)
-    text = re.sub(r"[\[\]{}<>()/,·\-+~!@#$%^&*_=|\"'`]", " ", text)
-    text = re.sub(r"[0-9]+\s*(?:원|개|팩|매입|입|ml|l|g|kg|mm|cm|개입)", " ", text, flags=re.I)
-    return normalize_space(text).lower()
+    return product_key_core(clean_title(title))
 
 
 # ---------------------------------------------------------------------------
@@ -250,7 +291,7 @@ def _field(block: str, tag: str) -> str:
     return html_mod.unescape(value).strip()
 
 
-def parse_ppomppu(xml_text: str) -> List[Dict[str, Any]]:
+def parse_ppomppu(xml_text: str, board: str = "ppomppu") -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     for block in ITEM_PATTERN.findall(xml_text):
         title = _field(block, "title")
@@ -267,10 +308,11 @@ def parse_ppomppu(xml_text: str) -> List[Dict[str, Any]]:
         recommendations = as_int(hits[0]) if hits else None
         views = as_int(hits[1]) if len(hits) > 1 else None
         comments = as_int(hits[2]) if len(hits) > 2 else None
+        deal_id = f"ppomppu-{post_id}" if board == "ppomppu" else f"ppomppu-{board}-{post_id}"
         items.append({
-            "id": f"ppomppu-{post_id}",
-            "source": "ppomppu",
-            "source_name": "뽐뿌 게시판",
+            "id": deal_id,
+            "source": "ppomppu" if board == "ppomppu" else f"ppomppu_{board}",
+            "source_name": SOURCE_NAMES.get(board if board == "ppomppu" else f"ppomppu_{board}", "뽐뿌"),
             "raw_title": title,
             "product_url": link.replace("&amp;", "&"),
             "description": normalize_space(strip_tags(_field(block, "description")))[:200],
@@ -288,6 +330,19 @@ def collect_ppomppu(timeout: float) -> List[Dict[str, Any]]:
     if "<rss" not in text.lower():
         raise RuntimeError("RSS 형식이 아님")
     return parse_ppomppu(text)
+
+
+PPOMPPU_PMARKET_RSS = "https://www.ppomppu.co.kr/rss.php?id=pmarket"
+
+
+def collect_ppomppu_pmarket(timeout: float) -> List[Dict[str, Any]]:
+    text = fetch(PPOMPPU_PMARKET_RSS, timeout=timeout)
+    if "<rss" not in text.lower():
+        raise RuntimeError("RSS 형식이 아님")
+    items = parse_ppomppu(text, board="pmarket")
+    if not items:
+        raise RuntimeError("목록 파싱 결과 0건(구조 변경 의심)")
+    return items
 
 
 # ---------------------------------------------------------------------------
@@ -344,6 +399,232 @@ def collect_clien(timeout: float) -> List[Dict[str, Any]]:
     if "클리앙" not in text:
         raise RuntimeError("클리앙 페이지가 아님(차단/변경 의심)")
     items = parse_clien(text)
+    if not items:
+        raise RuntimeError("목록 파싱 결과 0건(구조 변경 의심)")
+    return items
+
+
+# ---------------------------------------------------------------------------
+# 소스 4: 딜바다 국내핫딜 (그누보드 목록)
+# ---------------------------------------------------------------------------
+DEALBADA_LIST = "https://www.dealbada.com/bbs/board.php?bo_table=deal_domestic"
+
+
+def parse_dealbada(page_html: str) -> List[Dict[str, Any]]:
+    items: List[Dict[str, Any]] = []
+    for row in re.split(r"<tr class=\"", page_html)[1:]:
+        subject = re.search(r'class="td_subject">(.*?)</td>', row, re.S)
+        if not subject:
+            continue
+        link = re.search(r'href="([^"]*wr_id=(\d+)[^"]*)"', subject.group(1))
+        anchor = re.search(r'<a href="[^"]*wr_id=\d+[^"]*"\s*>(.*?)</a>', subject.group(1), re.S)
+        if not link or not anchor:
+            continue
+        title = normalize_space(strip_tags(anchor.group(1)))
+        if not title:
+            continue
+        category = re.search(r'class="bo_cate_link">([^<]*)<', row)
+        if category and normalize_space(category.group(1)) == "공지":
+            continue
+        numbers = re.findall(r'class="td_num">\s*([\d,]+)\s*<', row)
+        time_match = re.search(r'class="td_date">([^<]*)<', row)
+        image_match = re.search(r"<img src='([^']+)'", row)
+        items.append({
+            "id": f"dealbada-{link.group(2)}",
+            "source": "dealbada",
+            "source_name": SOURCE_NAMES["dealbada"],
+            "raw_title": title,
+            "product_url": "https:" + link.group(1) if link.group(1).startswith("//") else link.group(1),
+            "description": "",
+            "author": "",
+            "published": time_match.group(1).strip() if time_match else "",
+            "recommendations": 0,
+            "comments": 0,
+            "views": as_int(numbers[-1]) if numbers else None,
+            "image_url": image_match.group(1) if image_match else "",
+        })
+    return items
+
+
+def collect_dealbada(timeout: float) -> List[Dict[str, Any]]:
+    text = fetch(DEALBADA_LIST, timeout=timeout)
+    if "딜바다" not in text:
+        raise RuntimeError("딜바다 페이지가 아님(차단/변경 의심)")
+    items = parse_dealbada(text)
+    if not items:
+        raise RuntimeError("목록 파싱 결과 0건(구조 변경 의심)")
+    return items
+
+
+# ---------------------------------------------------------------------------
+# 소스 5: 어미새 통합 RSS (국내 딜만, 추천/댓글 없음)
+# ---------------------------------------------------------------------------
+EOMISAE_RSS = "https://eomisae.co.kr/rss"
+EOMISAE_SKIP_CATEGORIES = {"기타 결제인증", "자유게시판", "이벤트:쿠폰"}
+
+
+def parse_eomisae(xml_text: str) -> List[Dict[str, Any]]:
+    items: List[Dict[str, Any]] = []
+    for block in ITEM_PATTERN.findall(xml_text):
+        title = _field(block, "title")
+        link = _field(block, "link")
+        if not title or not link:
+            continue
+        categories = [normalize_space(c) for c in re.findall(r"<category>(.*?)</category>", block, re.S)]
+        # '국내' 딜이 아닌 글과 결제인증·잡담 글은 제외
+        if "국내" not in categories or EOMISAE_SKIP_CATEGORIES & set(categories):
+            continue
+        if title.startswith("[리뷰]") or "구매후기" in title:
+            continue
+        post_id = re.search(r"/(\d+)\s*$", link)
+        if not post_id:
+            continue
+        items.append({
+            "id": f"eomisae-{post_id.group(1)}",
+            "source": "eomisae",
+            "source_name": SOURCE_NAMES["eomisae"],
+            "raw_title": title,
+            "product_url": link,
+            "description": normalize_space(strip_tags(_field(block, "description")))[:200],
+            "author": "",
+            "published": _field(block, "pubDate"),
+            "recommendations": None,
+            "comments": None,
+            "views": None,
+        })
+    return items
+
+
+def collect_eomisae(timeout: float) -> List[Dict[str, Any]]:
+    text = fetch(EOMISAE_RSS, timeout=timeout)
+    if "<rss" not in text.lower() or "어미새" not in text:
+        raise RuntimeError("어미새 RSS가 아님(차단/변경 의심)")
+    items = parse_eomisae(text)
+    if not items:
+        raise RuntimeError("목록 파싱 결과 0건(구조 변경 의심)")
+    return items
+
+
+# ---------------------------------------------------------------------------
+# 소스 6: 이토랜드 핫딜 게시판 (서버렌더링 목록)
+# ---------------------------------------------------------------------------
+ETOLAND_LIST = "https://etoland.co.kr/bbs/board.php?bo_table=hotdeal"
+
+
+def parse_etoland(page_html: str) -> List[Dict[str, Any]]:
+    items: List[Dict[str, Any]] = []
+    for row in re.split(r'<li class="flex gap-3 px-4 py-2', page_html)[1:]:
+        link = re.search(r'href="(/b/hotdeal/view/[^"]+)"', row)
+        title_match = re.search(r'text-\[17px\][^>]*>(.*?)</b>', row, re.S)
+        if not link or not title_match:
+            continue
+        title = normalize_space(strip_tags(title_match.group(1)))
+        post_id = re.search(r"-(\d+)$", link.group(1))
+        if not title or not post_id:
+            continue
+        price_match = re.search(r'font-bold text-comment">([\d,]+)원<', row)
+        labels = re.search(r'class="label-s[^"]*">(.*?)</div>', row, re.S)
+        label_text = normalize_space(strip_tags(labels.group(1))) if labels else ""
+        store = ""
+        for piece in label_text.split("·"):
+            piece = piece.strip()
+            if piece and "원" not in piece and "배송" not in piece:
+                store = piece
+                break
+        comment_match = re.search(r'text-comment">\(<!-- -->(\d+)<!-- -->\)</span>', row)
+        like_match = re.search(r"lucide-heart[^>]*>.*?</svg>(\d+)</span>", row, re.S)
+        view_match = re.search(r"lucide-eye[^>]*>.*?</svg>(\d+)</span>", row, re.S)
+        meta = re.search(r'class="caption-m[^>]*text-etoText-4[^"]*">(.*?)</div>', row, re.S)
+        meta_parts = [normalize_space(strip_tags(part)) for part in re.findall(r"<span[^>]*>(.*?)</span>", meta.group(1), re.S)] if meta else []
+        meta_parts = [part for part in meta_parts if part and part != "|"]
+        price = as_int(price_match.group(1)) if price_match else None
+        shipping = "무료" if "무료배송" in label_text else ""
+        # 목록에는 제목과 가격이 따로 있으므로 뽐뿌식 제목으로 합쳐 준다.
+        raw_title = title if title.startswith("[") else f"[{store}] {title}" if store else title
+        if price:
+            raw_title += f" ({price:,}원)" if not shipping else f" ({price:,}원/{shipping})"
+        items.append({
+            "id": f"etoland-{post_id.group(1)}",
+            "source": "etoland",
+            "source_name": SOURCE_NAMES["etoland"],
+            "raw_title": raw_title,
+            "product_url": "https://etoland.co.kr" + link.group(1),
+            "description": "",
+            "author": "",
+            "published": meta_parts[1] if len(meta_parts) > 1 else "",
+            "recommendations": as_int(like_match.group(1)) if like_match else 0,
+            "comments": as_int(comment_match.group(1)) if comment_match else 0,
+            "views": as_int(view_match.group(1)) if view_match else None,
+            "image_url": (re.search(r'class="item-image[^"]*"><img[^>]*data-src="([^"]+)"', row).group(1)
+                          if re.search(r'class="item-image[^"]*"><img[^>]*data-src="([^"]+)"', row) else ""),
+        })
+    return items
+
+
+def collect_etoland(timeout: float) -> List[Dict[str, Any]]:
+    text = fetch(ETOLAND_LIST, timeout=timeout)
+    if "핫딜 게시판" not in text:
+        raise RuntimeError("이토랜드 핫딜 페이지가 아님(차단/변경 의심)")
+    items = parse_etoland(text)
+    if not items:
+        raise RuntimeError("목록 파싱 결과 0건(구조 변경 의심)")
+    return items
+
+
+# ---------------------------------------------------------------------------
+# 소스 7: 아카라이브 핫딜 채널 (서버렌더링 목록)
+# ---------------------------------------------------------------------------
+ARCA_LIST = "https://arca.live/b/hotdeal"
+ARCA_SKIP_CATEGORIES = {"viral"}
+
+
+def parse_arca(page_html: str) -> List[Dict[str, Any]]:
+    items: List[Dict[str, Any]] = []
+    for row in re.split(r'<div class="vrow hybrid', page_html)[1:]:
+        title_match = re.search(r'class="title hybrid-title"[^>]*>(.*?)</a>', row, re.S)
+        link = re.search(r'class="title hybrid-title" href="([^"]+)"', row)
+        if not title_match or not link:
+            continue
+        title = normalize_space(strip_tags(re.sub(r'<span class="info">.*?</span>', "", title_match.group(1), flags=re.S)))
+        post_id = re.search(r"/b/hotdeal/(\d+)", link.group(1))
+        if not title or not post_id:
+            continue
+        category = re.search(r'category=([a-z]+)"', row)
+        if category and category.group(1) in ARCA_SKIP_CATEGORIES:
+            continue
+        price_match = re.search(r'deal-price">\s*([\d,]+)원', row)
+        comment_match = re.search(r'comment-count">\[(\d+)\]', row)
+        rate_match = re.search(r'col-rate">(\d+)<', row)
+        view_match = re.search(r'col-view">(\d+)<', row)
+        store_match = re.search(r'deal-store">([^<]+)<', row)
+        delivery = re.search(r'deal-delivery">\s*([^<\s]+)', row)
+        price = as_int(price_match.group(1)) if price_match else None
+        store = normalize_space(store_match.group(1)) if store_match else ""
+        shipping = normalize_space(delivery.group(1)) if delivery else ""
+        raw_title = title if title.startswith("[") else f"[{store}] {title}" if store else title
+        if price:
+            raw_title += f" ({price:,}원/{shipping})" if shipping else f" ({price:,}원)"
+        items.append({
+            "id": f"arca-{post_id.group(1)}",
+            "source": "arca",
+            "source_name": SOURCE_NAMES["arca"],
+            "raw_title": raw_title,
+            "product_url": "https://arca.live/b/hotdeal/" + post_id.group(1),
+            "description": "",
+            "author": "",
+            "published": "",
+            "recommendations": as_int(rate_match.group(1)) if rate_match else 0,
+            "comments": as_int(comment_match.group(1)) if comment_match else 0,
+            "views": as_int(view_match.group(1)) if view_match else None,
+        })
+    return items
+
+
+def collect_arca(timeout: float) -> List[Dict[str, Any]]:
+    text = fetch(ARCA_LIST, timeout=timeout)
+    if "핫딜 채널" not in text:
+        raise RuntimeError("아카라이브 핫딜 페이지가 아님(차단/변경 의심)")
+    items = parse_arca(text)
     if not items:
         raise RuntimeError("목록 파싱 결과 0건(구조 변경 의심)")
     return items
@@ -428,12 +709,24 @@ def build_candidate(raw: Dict[str, Any], history: Dict[str, Any]) -> Tuple[Optio
     if len(product_key(product)) < 4:
         return None, "상품명이 너무 짧음"
 
-    min_recs = DEFAULT_MIN_RECS.get(raw["source"], 3)
-    min_recs = env_int(f"MIN_RECS_{raw['source'].upper()}", min_recs)
+    rule = SOURCE_RULES.get(raw["source"], {})
     recs = raw.get("recommendations") or 0
     comments = raw.get("comments") or 0
-    if recs < min_recs and comments < min_recs * 3:
-        return None, f"추천 {recs}·댓글 {comments} (기준 추천 {min_recs})"
+    views = raw.get("views") or 0
+    if rule.get("price_only"):
+        # 추천·댓글이 없는 RSS 피드: 상품명이 충분히 구체적인 경우만 받는다.
+        if len(product_key(product)) < int(rule.get("min_name_len", 8)):
+            return None, "추천 정보 없음·상품명이 짧음"
+    else:
+        min_recs = env_int(f"MIN_RECS_{raw['source'].upper()}", int(rule.get("min_recs", 3)))
+        min_comments = env_int(f"MIN_COMMENTS_{raw['source'].upper()}", int(rule.get("min_comments", min_recs * 3)))
+        min_views = env_int(f"MIN_VIEWS_{raw['source'].upper()}", int(rule.get("min_views", 0)))
+        passed = recs >= min_recs or comments >= min_comments or (min_views and views >= min_views)
+        if not passed:
+            return None, (
+                f"추천 {recs}·댓글 {comments}" + (f"·조회 {views}" if min_views else "")
+                + f" (기준 추천 {min_recs}·댓글 {min_comments}" + (f"·조회 {min_views}" if min_views else "") + ")"
+            )
 
     deal_id = raw["id"]
     previous = history.get(deal_id, {})
@@ -442,10 +735,14 @@ def build_candidate(raw: Dict[str, Any], history: Dict[str, Any]) -> Tuple[Optio
     is_new_low = bool(previous_lowest and price < previous_lowest)
 
     reasons = []
-    if mall:
-        reasons.append(f"{mall} 판매 · 커뮤니티 추천 {recs}건" + (f" · 댓글 {comments}건" if comments else ""))
+    if recs:
+        reasons.append(f"{mall + ' 판매 · ' if mall else raw['source_name'] + ' '}커뮤니티 추천 {recs}건"
+                       + (f" · 댓글 {comments}건" if comments else ""))
+    elif views:
+        reasons.append(f"{mall + ' 판매 · ' if mall else raw['source_name'] + ' '}조회 {views:,}회"
+                       + (f" · 댓글 {comments}건" if comments else ""))
     else:
-        reasons.append(f"{raw['source_name']} 추천 {recs}건" + (f" · 댓글 {comments}건" if comments else ""))
+        reasons.append(f"{mall + ' 판매 · ' if mall else ''}{raw['source_name']} 신규 글")
     if shipping:
         reasons.append(f"{shipping} · {price:,}원")
     if raw.get("description"):
@@ -513,9 +810,45 @@ def update_history(history: Dict[str, Any], candidate: Dict[str, Any]) -> None:
     }
 
 
+def pick_balanced(accepted: List[Dict[str, Any]], max_new: int, per_source_max: int) -> List[Dict[str, Any]]:
+    """소스가 한 곳에 몰리지 않게 한 소스당 per_source_max 건까지 번갈아 고른다."""
+    if per_source_max <= 0:
+        return accepted[:max_new]
+    groups: Dict[str, List[Dict[str, Any]]] = {}
+    for candidate in accepted:
+        groups.setdefault(candidate["source"], []).append(candidate)
+    order = sorted(groups, key=lambda name: (
+        int(groups[name][0]["community"].get("recommendations") or 0),
+        int(groups[name][0]["community"].get("comments") or 0),
+    ), reverse=True)
+    chosen: List[Dict[str, Any]] = []
+    for round_index in range(per_source_max):
+        for name in order:
+            bucket = groups[name]
+            if round_index < len(bucket) and len(chosen) < max_new:
+                chosen.append(bucket[round_index])
+    if len(chosen) < max_new:
+        picked = {id(item) for item in chosen}
+        for candidate in accepted:
+            if len(chosen) >= max_new:
+                break
+            if id(candidate) not in picked:
+                chosen.append(candidate)
+    return chosen
+
+
 def collect_all(timeout: float) -> List[Dict[str, Any]]:
     collected: List[Dict[str, Any]] = []
-    for name, func in (("ppomppu", collect_ppomppu), ("clien", collect_clien)):
+    collectors = (
+        ("ppomppu", collect_ppomppu),
+        ("ppomppu_pmarket", collect_ppomppu_pmarket),
+        ("clien", collect_clien),
+        ("etoland", collect_etoland),
+        ("arca", collect_arca),
+        ("dealbada", collect_dealbada),
+        ("eomisae", collect_eomisae),
+    )
+    for name, func in collectors:
         started = time.time()
         try:
             items = func(timeout)
@@ -571,10 +904,11 @@ def run(dry_run: bool = False) -> int:
         key=lambda c: (
             int(c["community"].get("recommendations") or 0),
             int(c["community"].get("comments") or 0),
+            int(c["community"].get("views") or 0),
         ),
         reverse=True,
     )
-    chosen = accepted[:max_new]
+    chosen = pick_balanced(accepted, max_new, env_int("PER_SOURCE_MAX", PER_SOURCE_MAX))
     dropped = len(accepted) - len(chosen)
 
     log(f"[filter] 수집 {len(collected)}건 · 신규 통과 {len(accepted)}건 · 이번 반영 {len(chosen)}건"
@@ -636,6 +970,49 @@ CLIEN_SAMPLE = """<div class="list_item symph_row jirum  " data-role="list-row" 
 </div></div></div>"""
 
 
+ETOLAND_SAMPLE = """<ul><li class="flex gap-3 px-4 py-2 hover:bg-[#feffd792]"><a class="group flex w-full gap-3 overflow-hidden" href="/b/hotdeal/view/%EC%84%A0%EC%B0%A9%EC%88%9C%ED%8A%B9%EA%B0%80-%ED%8D%BC%EB%8B%88%ED%8A%B8-9599592"><div class="item-image h-16 w-20 min-w-20 overflow-hidden"><img data-src="https://btcdn.etoland.co.kr/static/media/board/a.png" alt="x"/></div><div class="flex flex-1 flex-col overflow-hidden"><span class="inline-flex items-center gap-1 font-medium"><b class="max-w-fit flex-1 truncate font-semibold text-[17px] text-pressed">선착순특가) 퍼니트 역가수치 파인애플 브로멜라인 효소 3g 100포</b><span class="caption-m font-bold text-comment">(<!-- -->10<!-- -->)</span></span><div class="label-s flex flex-wrap items-center gap-1.5 text-etoText-2"><span class="body-m font-bold text-comment">24,270원</span><span class="text-etoText-3">·</span><span class="inline-flex items-center gap-0.5">토스</span><span class="text-etoText-3">·</span><span class="inline-flex items-center gap-0.5">무료배송</span></div><div class="caption-m flex flex-wrap items-center gap-1 text-etoText-4"><span>식품</span><span class="text-etoDivider-1">|</span><span>1시간전</span><span class="text-etoDivider-1">|</span><span class="text-etoText-3">토스쇼핑</span><span class="text-etoDivider-1">|</span><span class="inline-flex items-center gap-0.5"><svg class="lucide lucide-heart size-3.5"><path d="M2 9.5"></path></svg>7</span><span class="text-etoDivider-1">|</span><span class="inline-flex items-center gap-0.5"><svg class="lucide lucide-eye size-3.5"><circle cx="12"></circle></svg>281</span></div></div></a></li>
+<li class="flex gap-3 px-4 py-2 hover:bg-[#feffd792]"><a class="group flex w-full gap-3 overflow-hidden" href="/b/hotdeal/view/%EB%84%A4%EC%9D%B4%EB%B2%84%ED%8E%98%EC%9D%B4-9599500"><div class="flex flex-1 flex-col overflow-hidden"><span class="inline-flex items-center gap-1 font-medium"><b class="max-w-fit flex-1 truncate font-semibold text-[17px] text-pressed">[네이버페이] 일일적립, 클릭 3원</b><span class="caption-m font-bold text-comment">(<!-- -->20<!-- -->)</span></span><div class="label-s flex flex-wrap items-center gap-1.5 text-etoText-2"></div><div class="caption-m flex flex-wrap items-center gap-1 text-etoText-4"><span>포인트</span><span class="text-etoDivider-1">|</span><span>3시간전</span></div></div></a></li></ul>"""
+
+ARCA_SAMPLE = """<div class="vrow hybrid"><div class="vrow-inner"><div class="vrow-top deal"><span class="vcol col-id"><span>61744</span></span><span class="vcol col-title"><span class="badges"><span class="deal-store">토스쇼핑</span>&nbsp;<a class="badge" href="/b/hotdeal?category=food">식품</a></span><a class="title hybrid-title" href="/b/hotdeal/189882969?p=1"><span class="media-icon bi-images"></span>
+                            오뚜기 진라면 순한맛, 120g, 5개입, 8개
+                            <span class="info"><span class="comment-count">[10]</span></span></a></span></div><a class="title hybrid-bottom" href="/b/hotdeal/189882969?p=1"><div class="vrow-bottom deal"><span class="deal-price">18,900원
+    </span><img src="/static/assets/images/shipping.svg" width="16"><span class="deal-delivery">무료
+    </span><span class="vcol col-author"><span class="user-info"><span>ㅇㅇ</span></span></span><span class="vcol col-time"><time datetime="2026-11-21T15:58:53.000Z">28분전</time></span><span class="vcol col-view">465</span><span class="vcol col-rate">4</span></div></a></div></div>
+<div class="vrow hybrid"><div class="vrow-inner"><div class="vrow-top deal"><span class="vcol col-id"><span>61743</span></span><span class="vcol col-title"><span class="badges"><span class="deal-store">쿠팡</span><a class="badge" href="/b/hotdeal?category=viral">바이럴</a></span><a class="title hybrid-title" href="/b/hotdeal/189881134?p=1">
+                            대건명가 돼지국밥 630g 5팩 예약발송
+                            <span class="info"><span class="comment-count">[10]</span></span></a></span></div><a class="title hybrid-bottom" href="/b/hotdeal/189881134?p=1"><div class="vrow-bottom deal"><span class="deal-price">19,510원
+    </span><span class="deal-delivery">무료
+    </span><span class="vcol col-view">931</span><span class="vcol col-rate">1</span></div></a></div></div>"""
+
+DEALBADA_SAMPLE = """<table><tr class="">
+<td class="td_num">
+33315            </td>
+<td class="td_name sv_use"><span class="sv_wrap"><a href="//www.dealbada.com/bbs/profile.php?mb_nick=x" class="sv_member"><div class="div_nickname"> 운수저</div></a></span></td>
+<td class="td_cate"><a href="//www.dealbada.com/bbs/board.php?bo_table=deal_domestic&amp;sca=x" class="bo_cate_link">식품/건강</a></td>
+<td class="td_img"><a href="//www.dealbada.com/bbs/board.php?bo_table=deal_domestic&amp;wr_id=572893&page=1"><img src='http://cdn.dealbada.com/a.jpg' width=50 height=40></a></td>
+<td class="td_subject"><a href="//www.dealbada.com/bbs/board.php?bo_table=deal_domestic&amp;wr_id=572893&page=1" >[네이버] 블랙모어스 프로폴리스 4병 (39,900원/무료)</a></td>
+<td class="td_date">00:13</td>
+<td class="td_num">1234</td>
+<td class="td_num_g" style="color:#000;"><span style="color:#ac3131">0</span> / <span style="color:#1f00b5">0</span></td></tr>
+<tr class=""><td class="td_num">1</td><td class="td_cate"><a href="//www.dealbada.com/bbs/board.php?bo_table=deal_domestic&amp;sca=x" class="bo_cate_link">공지</a></td><td class="td_subject"><a href="//www.dealbada.com/bbs/board.php?bo_table=deal_domestic&amp;wr_id=5976&page=1" >딜바다 핫딜 게시판 이용안내</a></td><td class="td_date">01-01</td><td class="td_num">763009</td></tr>
+</table>"""
+
+EOMISAE_SAMPLE = """<rss version="2.0"><channel><title>어미새</title><item>
+<title>프링글스 치즈맛, 110g, 12개 16,320원</title><link>https://eomisae.co.kr/rt/212068649</link>
+<description>프링글스 12통 로켓와우할인입니다</description><category>기타정보</category><category>국내</category>
+<pubDate>Sun, 22 Nov 2026 01:19:44 +0900</pubDate></item>
+<item><title>[리뷰] 문풍지 850원 무배</title><link>https://eomisae.co.kr/fi2/212067591</link>
+<description>.</description><category>기타 결제인증</category><category>국내</category>
+<pubDate>Sun, 22 Nov 2026 01:07:55 +0900</pubDate></item>
+<item><title>배대지 추천 좀 해주세요 ㅠ</title><link>https://eomisae.co.kr/rt/212060000</link>
+<description>시에라 폴로 막혔습니다</description><category>자유게시판</category><category>잡담</category>
+<pubDate>Sun, 22 Nov 2026 00:57:26 +0900</pubDate></item>
+<item><title>[아마존] 포터프로 (34,000원/무배)</title><link>https://eomisae.co.kr/rt/212050000</link>
+<description>해외</description><category>기타정보</category><category>해외</category>
+<pubDate>Sun, 22 Nov 2026 00:50:00 +0900</pubDate></item>
+</channel></rss>"""
+
+
 def selftest() -> int:
     failures = []
 
@@ -675,9 +1052,11 @@ def selftest() -> int:
     check("이벤트 글 제외", event is None, reason)
 
     os.environ["MIN_RECS_PPOMPPU"] = "50"
+    os.environ["MIN_COMMENTS_PPOMPPU"] = "50"
     low, reason = build_candidate(ppomppu[0], dict())
     check("추천 기준 미달 제외", low is None and "추천" in reason, reason)
     os.environ.pop("MIN_RECS_PPOMPPU")
+    os.environ.pop("MIN_COMMENTS_PPOMPPU")
 
     check("상품명 중복 판정", similarity(product_key("국산 면양말 10켤레"), product_key("[G마켓] 국산 면양말 10켤레")) > 0.95)
     check("다른 상품 비중복", similarity(product_key("국산 면양말 10켤레"), product_key("스테인리스 텀블러 600ml")) < 0.7)
@@ -685,6 +1064,78 @@ def selftest() -> int:
           str(parse_price("[몰] 무선청소기 정가 349,000원 → 199,000원 (무료)")))
     check("개당 가격 무시", parse_price("[몰] 계란 2판 19,800원 (개당 9,900원)")[0] == 19800,
           str(parse_price("[몰] 계란 2판 19,800원 (개당 9,900원)")))
+
+    etoland = parse_etoland(ETOLAND_SAMPLE)
+    check("이토랜드 2건 파싱", len(etoland) == 2, str(len(etoland)))
+    if etoland:
+        row = etoland[0]
+        check("이토랜드 id", row["id"] == "etoland-9599592", row["id"])
+        check("이토랜드 추천/댓글/조회",
+              row["recommendations"] == 7 and row["comments"] == 10 and row["views"] == 281, str(row))
+        check("이토랜드 제목 합성", row["raw_title"] == "[토스] 선착순특가) 퍼니트 역가수치 파인애플 브로멜라인 효소 3g 100포 (24,270원/무료)",
+              row["raw_title"])
+        price, _, shipping = parse_price(row["raw_title"])
+        check("이토랜드 가격 파싱", price == 24270 and shipping == "무료배송 표기", f"{price} {shipping}")
+        eto_ok, why = build_candidate(row, dict())
+        check("이토랜드 후보 통과", eto_ok is not None and why == "통과", why)
+        if eto_ok:
+            check("이토랜드 상품명", eto_ok["title"].startswith("선착순특가") and eto_ok["price"] == 24270,
+                  eto_ok["title"])
+    if len(etoland) > 1:
+        no_price, why = build_candidate(etoland[1], dict())
+        check("가격 없는 포인트 글 제외", no_price is None and why == "가격 표기 없음", why)
+
+    arca = parse_arca(ARCA_SAMPLE)
+    check("아카라이브 1건 파싱(바이럴 제외)", len(arca) == 1, str(len(arca)))
+    if arca:
+        row = arca[0]
+        check("아카라이브 추천/댓글/조회",
+              row["recommendations"] == 4 and row["comments"] == 10 and row["views"] == 465, str(row))
+        check("아카라이브 제목 합성", row["raw_title"].startswith("[토스쇼핑] 오뚜기 진라면") and row["raw_title"].endswith("(18,900원/무료)"),
+              row["raw_title"])
+        arca_ok, why = build_candidate(row, dict())
+        check("아카라이브 후보 통과", arca_ok is not None and why == "통과", why)
+
+    dealbada = parse_dealbada(DEALBADA_SAMPLE)
+    check("딜바다 1건 파싱(공지 제외)", len(dealbada) == 1, str(len(dealbada)))
+    if dealbada:
+        row = dealbada[0]
+        check("딜바다 id/조회수", row["id"] == "dealbada-572893" and row["views"] == 1234, str(row))
+        check("딜바다 URL", row["product_url"].startswith("https://www.dealbada.com/"), row["product_url"])
+        d_ok, why = build_candidate(row, dict())
+        check("딜바다 조회 기준 통과", d_ok is not None and why == "통과", why)
+        low_view = dict(row, views=120)
+        d_low, why = build_candidate(low_view, dict())
+        check("딜바다 조회 적은 글 제외", d_low is None and "조회" in why, why)
+
+    eomisae = parse_eomisae(EOMISAE_SAMPLE)
+    check("어미새 1건 파싱(결제인증·잡담·해외 제외)", len(eomisae) == 1, str(len(eomisae)))
+    if eomisae:
+        row = eomisae[0]
+        check("어미새 id", row["id"] == "eomisae-212068649", row["id"])
+        e_ok, why = build_candidate(row, dict())
+        check("어미새 가격만으로 통과", e_ok is not None and why == "통과", why)
+        if e_ok:
+            check("어미새 가격", e_ok["price"] == 16320 and e_ok["title"].startswith("프링글스"),
+                  f"{e_ok['price']} {e_ok['title']}")
+        short = dict(row, raw_title="[몰] 양말 (3,900원)")
+        e_short, why = build_candidate(short, dict())
+        check("어미새 짧은 상품명 제외", e_short is None, why)
+
+    sample_candidates = [
+        {"source": "ppomppu", "community": {"recommendations": 9, "comments": 0}},
+        {"source": "ppomppu", "community": {"recommendations": 8, "comments": 0}},
+        {"source": "ppomppu", "community": {"recommendations": 7, "comments": 0}},
+        {"source": "arca", "community": {"recommendations": 4, "comments": 10}},
+        {"source": "etoland", "community": {"recommendations": 3, "comments": 4}},
+    ]
+    balanced = pick_balanced(sample_candidates, 3, 2)
+    check("괄호 없는 끝가격 제거", clean_title("프링글스 치즈맛, 110g, 12개 16,320원") == "프링글스 치즈맛, 110g, 12개",
+          clean_title("프링글스 치즈맛, 110g, 12개 16,320원"))
+    check("소스 분산 선택", [c["source"] for c in balanced] == ["ppomppu", "arca", "etoland"],
+          str([c["source"] for c in balanced]))
+    check("한 소스 상한", sum(1 for c in pick_balanced(sample_candidates, 4, 2) if c["source"] == "ppomppu") == 2,
+          str(pick_balanced(sample_candidates, 4, 2)))
 
     log("RESULT " + ("OK" if not failures else f"FAIL {failures}"))
     return 0 if not failures else 1
