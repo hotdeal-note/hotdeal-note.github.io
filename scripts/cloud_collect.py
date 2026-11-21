@@ -141,8 +141,11 @@ def log(msg: str) -> None:
     print(msg, flush=True)
 
 
-def fetch(url: str, timeout: float = 15.0, max_bytes: int = 1_500_000) -> str:
-    request = urllib.request.Request(url, headers=HTTP_HEADERS)
+def fetch(url: str, timeout: float = 15.0, max_bytes: int = 1_500_000, extra_headers: Optional[Dict[str, str]] = None) -> str:
+    headers = dict(HTTP_HEADERS)
+    if extra_headers:
+        headers.update(extra_headers)
+    request = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(request, timeout=timeout) as response:
         if response.status != 200:
             raise RuntimeError(f"HTTP {response.status}")
@@ -576,6 +579,16 @@ def collect_etoland(timeout: float) -> List[Dict[str, Any]]:
 # ---------------------------------------------------------------------------
 ARCA_LIST = "https://arca.live/b/hotdeal"
 ARCA_SKIP_CATEGORIES = {"viral"}
+# 데이터센터 IP에서 평범한 요청은 403이 나므로 탐색기 헤더를 더 붙인다.
+ARCA_HEADERS = {
+    "Referer": "https://arca.live/",
+    "Origin": "https://arca.live",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
+}
 
 
 def parse_arca(page_html: str) -> List[Dict[str, Any]]:
@@ -621,7 +634,7 @@ def parse_arca(page_html: str) -> List[Dict[str, Any]]:
 
 
 def collect_arca(timeout: float) -> List[Dict[str, Any]]:
-    text = fetch(ARCA_LIST, timeout=timeout)
+    text = fetch(ARCA_LIST, timeout=timeout, extra_headers=ARCA_HEADERS)
     if "핫딜 채널" not in text:
         raise RuntimeError("아카라이브 핫딜 페이지가 아님(차단/변경 의심)")
     items = parse_arca(text)
