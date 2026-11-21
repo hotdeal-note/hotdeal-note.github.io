@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T11:08:00+09:00",
+  "updated_at": "2026-11-21T11:33:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,37 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "locknlock-metro-mug-600",
+      "title": "락앤락 메트로 머그 텀블러, 올드타운아이보리, 600ml, 1개",
+      "brand": "락앤락",
+      "badge": "리뷰 29,687건 · 별점 5.0 · 최근 한 달 1,000명 이상 구매",
+      "shipping": "로켓배송 · 와우 무료배송 · 내일(일) 11/22 도착",
+      "deadline": "계절·트렌드 추천 (스레드 2건 상한으로 시세 페이지 단독 반영)",
+      "list_price": 34700,
+      "effective_price": 19520,
+      "effective_label": "일반판매가 (정가 대비 43% 할인)",
+      "max_discount_price": null,
+      "max_discount_label": null,
+      "reward_note": "쿠페이 머니 결제 시 최대 150원 적립",
+      "avg_30d": null,
+      "avg_label": null,
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": 43,
+      "discount_ref": "정가",
+      "discount_vs_avg_pct": null,
+      "updated_at": "2026-11-21",
+      "source_note": "쿠팡 상품 페이지 직접 확인 (2026.11.21 11:31). 정가 34,700원 → 일반판매가 19,520원(43%). 와우 가입 쿠폰가 14,960원은 1회성이라 제외.",
+      "affiliate_url": "https://link.coupang.com/a/iQItyNILQG",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "영하권 추위 속 책상 위 따뜻한 음료 보온을 위한 600ml 대용량 스텐 진공 머그 텀블러",
+        "정가 34,700원 → 일반판매가 19,520원(43% 할인), 와우 무료배송으로 내일(일) 도착",
+        "상품평 29,687건 · 별점 5.0, 한 달간 1,000명 이상 구매로 검증된 스테디셀러",
+        "손잡이형 디자인과 스테인리스 이중 진공 보온·보냉 구조로 사무실·재택근무용으로 적합"
+      ]
+    },
     {
       "id": "umgong-highlight-heater",
       "title": "엄공 하이라이트 전기히터 난로 가정용 사무실 난방기 (UG-3LHR)",
