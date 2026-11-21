@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T11:05:00+09:00",
+  "updated_at": "2026-11-21T11:08:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -65,12 +65,12 @@
           "price": 139000
         }
       ],
-      "threads_url": "",
-      "threads_reply_url": "",
+      "threads_url": "https://www.threads.com/@ilililssss/post/Df_HoR4gWbi",
+      "threads_reply_url": "https://www.threads.com/@ilililssss/post/Df_HuFoAZzI",
       "site_url": "https://hotdeal-note.github.io/?id=umgong-highlight-heater",
       "image_path": "downloads/umgong-heater.png",
       "status": "active",
-      "published_at": "2026-11-21T11:05:00+09:00"
+      "published_at": "2026-11-21T11:08:00+09:00"
     },
     {
       "id": "brandon-compression-pouch-2set",
