@@ -22,7 +22,7 @@
       "max_discount_label": null,
       "reward_note": "쿠팡캐시 최대 101원 적립 (쿠페이 머니 결제 시)",
       "avg_30d": 15283,
-      "avg_label": "쿠팡 동일상품 3개입(3kg) 3주 평균 단가(1kg당)",
+      "avg_label": "3개입 3주 평균(1kg당)",
       "official_low": null,
       "danawa_low": 13412,
       "discount_pct": 51,
@@ -52,23 +52,23 @@
           "price": 14980
         },
         {
-          "label": "골드박스 와우쿠폰할인가",
+          "label": "와우쿠폰할인가",
           "price": 10090
         },
         {
-          "label": "에누리 타 브랜드 1kg 최저",
+          "label": "타 브랜드 최저",
           "price": 13412
         },
         {
-          "label": "쿠팡 3개입 3주 평균 단가(1kg당)",
+          "label": "3개입 평균(1kg당)",
           "price": 15283
         },
         {
-          "label": "쿠팡 3개입 1kg당(11/22)",
+          "label": "3개입 1kg당",
           "price": 19800
         },
         {
-          "label": "KAMIS 굴 1kg 온라인 시세",
+          "label": "KAMIS 시세",
           "price": 18717
         }
       ],
