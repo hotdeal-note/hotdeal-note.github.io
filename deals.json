@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T22:35:30+09:00",
+  "updated_at": "2026-11-22T11:35:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,63 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "plus-paper-clinch-sl106nb",
+      "title": "플러스 페이퍼 클린치 SL106NB, White, 1개",
+      "brand": "플러스",
+      "badge": "리뷰 910건 · 최고 80%·좋음 13% (800명 이상 만족)",
+      "shipping": "로켓배송 · 19,800원 이상 무료배송 · 내일(월) 11/23 도착",
+      "deadline": "심 없는 스테이플러 아이디어템 · 정가 대비 33% 할인",
+      "list_price": 15000,
+      "effective_price": 9930,
+      "effective_label": "일반판매가 (정가 대비 33% 할인 · 와우 가입 쿠폰 5,930원은 최초 1회성 제외)",
+      "max_discount_price": 5930,
+      "max_discount_label": "와우 가입 쿠폰가 (최초 1회)",
+      "reward_note": "쿠팡캐시 최대 59원 적립 (쿠페이 머니 결제 시)",
+      "avg_30d": null,
+      "avg_label": null,
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": 33,
+      "discount_ref": "정가",
+      "discount_vs_avg_pct": null,
+      "updated_at": "2026-11-22",
+      "source_note": "쿠팡 상품 페이지 직접 확인 (2026.11.22 11:33). 정가 15,000원 → 일반판매가 9,930원(33% 할인). 와우 가입 쿠폰 5,930원 적용 시 가격은 최초 1회성이라 체감가에서 제외. 로켓배송, 19,800원 이상 무료배송, 내일(월) 11/23 도착. 타몰(다나와·에누리) 시세는 대조하지 않음",
+      "affiliate_url": "https://link.coupang.com/a/iSnyXp9qIC",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "정가 15,000원에서 33% 내린 9,930원, 로켓배송",
+        "금속 심 없이 종이 자체를 잘라 고리처럼 엮어 접는 방식 — 리필 심을 살 일이 없음",
+        "문서를 파쇄기에 넣을 때 철심을 뽑지 않아도 되고, 떼어낼 때도 그냥 풀어지듯 분리됨",
+        "심이 없어 아이들·유치원에서도 안전하다는 후기 다수",
+        "권장 지철매수 6매라 두꺼운 서류에는 못 쓰고, 종이에 작은 구멍·접힘 자국이 남는다는 아쉬운 점",
+        "상품평 910건 중 최고 80%·좋음 13%(800명 이상 만족), 한 달간 200명 이상 구매",
+        "내일(월) 11/23 도착 — 사무·문구 아이디어템으로 가격 부담이 적음"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 15000
+        },
+        {
+          "label": "일반판매가",
+          "price": 9930
+        },
+        {
+          "label": "와우 가입 쿠폰가(최초 1회)",
+          "price": 5930
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-22",
+          "price": 9930
+        }
+      ],
+      "image_path": "downloads/plus-paper-clinch-sl106nb.png",
+      "status": "active",
+      "published_at": "2026-11-22T11:35:00+09:00"
+    },
     {
       "id": "sauberkugel-blackpearl",
       "title": "자우버쿠겔 블랙펄 가방청소볼, 1개",
