@@ -538,5 +538,59 @@
   "lowest_price": 9890,
   "last_price": 9890,
   "observations": 1
+ },
+ "etoland-9602270": {
+  "title": "선착순특가) 앰비피 MBP 유단백추출물 정, 60정, 2개",
+  "source": "etoland",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 19400,
+  "last_price": 19400,
+  "observations": 1
+ },
+ "ppomppu-750900": {
+  "title": "통화 200분, 데이터 20GB",
+  "source": "ppomppu",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 3900,
+  "last_price": 3900,
+  "observations": 1
+ },
+ "dealbada-572903": {
+  "title": "동일식품 어포튀각 4봉",
+  "source": "dealbada",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 9310,
+  "last_price": 9310,
+  "observations": 1
+ },
+ "eomisae-212281660": {
+  "title": "선착쿠폰) 더단백 드링크 8종 42팩",
+  "source": "eomisae",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 47508,
+  "last_price": 47508,
+  "observations": 1
+ },
+ "etoland-9602157": {
+  "title": "선착순특가) 사과빨 양념 쪽갈비, 600g, 3팩",
+  "source": "etoland",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 25800,
+  "last_price": 25800,
+  "observations": 1
+ },
+ "ppomppu-750905": {
+  "title": "100gb + 5mbps 유플망 알뜰요금제",
+  "source": "ppomppu",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 2000,
+  "last_price": 2000,
+  "observations": 1
  }
 }
