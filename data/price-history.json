@@ -484,5 +484,59 @@
   "lowest_price": 12960,
   "last_price": 12960,
   "observations": 1
+ },
+ "etoland-9602302": {
+  "title": "생선숙편 꼬치어묵 10개 4팩",
+  "source": "etoland",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 10937,
+  "last_price": 10937,
+  "observations": 1
+ },
+ "ppomppu-750895": {
+  "title": "한돈 목살 1kg 13,930원, 삼겹살 14,630원 (다양/무료)",
+  "source": "ppomppu",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 14630,
+  "last_price": 14630,
+  "observations": 1
+ },
+ "dealbada-572911": {
+  "title": "레시피카드 증정 티젠 콤부차 90스틱(9종 혼합구성)",
+  "source": "dealbada",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 16900,
+  "last_price": 16900,
+  "observations": 1
+ },
+ "eomisae-212269796": {
+  "title": "오리온 다이제샌드 우도땅콩맛 8p, 392g, 1개",
+  "source": "eomisae",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 4200,
+  "last_price": 4200,
+  "observations": 1
+ },
+ "etoland-9602354": {
+  "title": "바세린 프로텍팅 젤리 오리지널 100ml 5개",
+  "source": "etoland",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 10178,
+  "last_price": 10178,
+  "observations": 1
+ },
+ "ppomppu-750898": {
+  "title": "1+1 무타공 LED 마그네틱 라이트바 1200mah",
+  "source": "ppomppu",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 9890,
+  "last_price": 9890,
+  "observations": 1
  }
 }
