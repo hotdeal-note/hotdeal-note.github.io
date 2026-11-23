@@ -592,5 +592,59 @@
   "lowest_price": 2000,
   "last_price": 2000,
   "observations": 1
+ },
+ "etoland-9602265": {
+  "title": "선착순특가) 깍두기, 10kg, 1개",
+  "source": "etoland",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 15900,
+  "last_price": 15900,
+  "observations": 1
+ },
+ "ppomppu-751033": {
+  "title": "난각번호1번 무항생제 유정란 60구/40구",
+  "source": "ppomppu",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 17992,
+  "last_price": 17992,
+  "observations": 1
+ },
+ "dealbada-572918": {
+  "title": "써모스 블프 전 제품 최대 72% 할인",
+  "source": "dealbada",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 9900,
+  "last_price": 9900,
+  "observations": 1
+ },
+ "eomisae-212393446": {
+  "title": "26년산 고시히카리 10kg",
+  "source": "eomisae",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 31590,
+  "last_price": 31590,
+  "observations": 1
+ },
+ "etoland-9602879": {
+  "title": "아끼니 굳지 않는 떡 1kg+1kg",
+  "source": "etoland",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 11500,
+  "last_price": 11500,
+  "observations": 1
+ },
+ "dealbada-572913": {
+  "title": "알카몬 하이엔드 알카라인 건전지 AAA 32개",
+  "source": "dealbada",
+  "first_seen": "2026-11-23",
+  "last_seen": "2026-11-23",
+  "lowest_price": 10320,
+  "last_price": 10320,
+  "observations": 1
  }
 }
