@@ -1,13 +1,131 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23T12:40:00+09:00",
+  "updated_at": "2026-11-23T17:38:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
-    "disclosure": "이 페이지의 구매 링크는 네이버 쇼핑 커넥트·쿠팡 파트너스 활동의 일환으로, 판매 발생 시 일정액의 수수료를 제공받습니다.",
+    "disclosure": "이 페이지의 구매 링크는 네이버 쇼핑 커넥트·쿠팡 파트너스·토스쇼핑 쉐어링크 활동의 일환으로, 판매 발생 시 일정액의 수수료를 제공받습니다.",
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "merchent-vaseline-bodylotion-2l",
+      "title": "메르헨트 딥 모이스춰 바세린 바디로션, 1L, 2개",
+      "brand": "토스쇼핑",
+      "badge": "토스 바디로션 1위 · BEST 2위 · 리뷰 2,279건(4.6점)",
+      "shipping": "무료배송 · 내일출발 (베스트판매자)",
+      "deadline": "토스쇼핑 하루특가·선착순특가 · 지금 30일 내 최저가예요",
+      "list_price": 40000,
+      "effective_price": 9990,
+      "effective_label": "토스쇼핑 하루특가 (무료배송)",
+      "max_discount_price": null,
+      "max_discount_label": null,
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 12080,
+      "avg_label": "지름알림 핫딜 보통가",
+      "official_low": 9990,
+      "danawa_low": 18573,
+      "discount_pct": 75,
+      "discount_ref": "판매자 표시가 40,000원 기준",
+      "discount_vs_avg_pct": 17.3,
+      "updated_at": "2026-11-23",
+      "source_note": "토스 쉐어링크(sharelink.toss.im) 직접 확인 (2026.11.23 17:31). 선착순특가·하루특가 9,990원(1L 2개, 무료배송, 내일출발). 시세 대조: 에누리 가격비교 최저가 18,573원(무료배송) 대비 46.2% 저렴, 폴센트 쿠팡 최저가 14,900원 대비 33.0% 저렴, 지름알림 기준 지난 1년 최저가 9,990원 타이(보통가 12,080원 대비 2,090원 저렴). 토스쇼핑 바디로션 카테고리 1위·BEST 2위, 리뷰 2,279건(평점 4.6).",
+      "affiliate_url": "https://toss.shopping/_m/FJXeEkF2",
+      "affiliate_label": "토스쇼핑 쉐어링크",
+      "reasons": [
+        "1L 대용량 바디로션 2개(총 2L)에 9,990원 무료배송 — 1L당 4,995원 수준",
+        "에누리 가격비교 최저가 18,573원 대비 46.2% 저렴, 쿠팡 최저가 14,900원 대비 33.0% 저렴",
+        "지난 1년 기준 역대 최저가 9,990원 타이(보통가 12,080원보다 2,090원 낮음)",
+        "토스쇼핑 바디로션 1위·BEST 2위, 리뷰 2,279건(평점 4.6점)·내일출발 조건",
+        "아쉬운 점: 1L×2개 대용량 세트라 1인 사용 시 보관 공간과 사용 기한 확인 필요"
+      ],
+      "comparison_points": [
+        {
+          "label": "토스 하루특가(1L×2)",
+          "price": 9990
+        },
+        {
+          "label": "핫딜 보통가",
+          "price": 12080
+        },
+        {
+          "label": "쿠팡 최저가",
+          "price": 14900
+        },
+        {
+          "label": "에누리 최저가",
+          "price": 18573
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-23",
+          "price": 9990
+        }
+      ],
+      "image_path": "downloads/merchent-vaseline-bodylotion-2l.png",
+      "status": "active",
+      "published_at": "2026-11-23T17:38:00+09:00"
+    },
+    {
+      "id": "baskin-alien-milky-drink-10",
+      "title": "배스킨라빈스 엄마는 외계인 밀키 드링크, 300ml, 10개",
+      "brand": "토스쇼핑",
+      "badge": "토스 BEST 14위 · 리뷰 329건(4.7점) · 베스트판매자",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "deadline": "토스쇼핑 오늘만 하루특가(자정 마감) · 지금 30일 내 최저가예요",
+      "list_price": 29000,
+      "effective_price": 9900,
+      "effective_label": "토스쇼핑 하루특가 (무료배송)",
+      "max_discount_price": null,
+      "max_discount_label": null,
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 12900,
+      "avg_label": "직전 토스 특가(11/4)",
+      "official_low": 9900,
+      "danawa_low": 15600,
+      "discount_pct": 65,
+      "discount_ref": "판매자 표시가 29,000원 기준",
+      "discount_vs_avg_pct": 23.3,
+      "updated_at": "2026-11-23",
+      "source_note": "토스 쉐어링크(sharelink.toss.im) 직접 확인 (2026.11.23 17:31). 오늘 하루특가(11/23 자정 마감) 9,900원(300ml 10개, 100ml당 330원·개당 990원, 무료배송·내일도착·늦으면보상). 시세 대조: 직전 토스 특가 12,900원(11/4·11/23 새벽) 대비 23.3% 저렴, 10/29 이후 최저가 11,600원을 깬 역대 최저가 경신, 쿠팡 판매가 15,600원(품절) 대비 36.5% 저렴.",
+      "affiliate_url": "https://toss.shopping/_m/RHyw0xea",
+      "affiliate_label": "토스쇼핑 쉐어링크",
+      "reasons": [
+        "300ml 대용량 컵 음료 10개에 9,900원 무료배송 — 개당 990원(100ml당 330원)",
+        "직전 토스 특가 12,900원 대비 23.3% 저렴하고 최근 최저 11,600원을 깬 역대 최저가",
+        "쿠팡 판매가 15,600원(일시품절) 대비 36.5% 저렴",
+        "내일도착·늦으면보상·무료배송 조건에 리뷰 329건 평점 4.7점",
+        "아쉬운 점: 냉장 보관 음료 10개 묶음이라 냉장고 공간 확보 및 소비기한 확인 필요"
+      ],
+      "comparison_points": [
+        {
+          "label": "토스 하루특가(10개)",
+          "price": 9900
+        },
+        {
+          "label": "기존 최저(10/29)",
+          "price": 11600
+        },
+        {
+          "label": "직전 특가(11/4)",
+          "price": 12900
+        },
+        {
+          "label": "쿠팡 판매가(품절)",
+          "price": 15600
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-23",
+          "price": 9900
+        }
+      ],
+      "image_path": "downloads/baskin-alien-milky-drink-10.png",
+      "status": "active",
+      "published_at": "2026-11-23T17:38:00+09:00"
+    },
     {
       "id": "doldolmali-samgyeopsal-750g",
       "title": "돌돌말이 대패삼겹살 바로구이 (냉동), 750g, 1개",
