@@ -9,6 +9,138 @@
   },
   "deals": [
     {
+      "id": "wonkimchi-chive-2kg",
+      "title": "원김치 쪽파김치, 가정용, 2kg, 1개",
+      "brand": "원김치",
+      "badge": "토스 하루특가 · BEST 1위 · 4.6점 (리뷰 17,411건)",
+      "shipping": "무료배송 · 내일출발",
+      "deadline": "오늘(11/24) 하루특가 · 101일 역대 최저가",
+      "list_price": 20000,
+      "effective_price": 7790,
+      "effective_label": "토스 선착순 하루특가 (무료배송)",
+      "max_discount_price": 7790,
+      "max_discount_label": "토스 하루특가",
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 9814,
+      "avg_label": "101일 평균가 9,814원",
+      "official_low": 7790,
+      "danawa_low": 9360,
+      "discount_pct": 61,
+      "discount_ref": "표시 정가 20,000원 대비 61%↓ · 101일 평균 9,814원 대비 20.6%↓",
+      "discount_vs_avg_pct": 21,
+      "updated_at": "2026-11-24",
+      "source_note": "토스쇼핑 쉐어링크 하루특가·BEST 1위 직접 확인 (2026.11.24 12:31). 7,790원(100g당 390원, 무료배송·내일출발), 리뷰 17,411건 4.6점. 딜바고·오늘의득템 101일 관측 기준 평균가 9,814원·직전가 8,450~9,360원보다 내려 역대 최저가 7,790원 갱신.",
+      "affiliate_url": "https://toss.shopping/_m/v83AQfU2",
+      "affiliate_label": "토스쇼핑 쉐어링크",
+      "reasons": [
+        "101일 가격 추적 기준 역대 최저가 7,790원(100g당 390원) — 평균 9,814원 대비 20.6% 저렴",
+        "어제(11/23) 9,360원·8,450원에서 한 번 더 내려간 오늘 하루특가",
+        "리뷰 17,411건·평점 4.6점으로 재구매가 많은 인기 쪽파김치",
+        "무료배송·내일출발 조건으로 추가 배송비 부담 없음"
+      ],
+      "comparison_points": [
+        {
+          "label": "토스 하루특가 (무료)",
+          "price": 7790
+        },
+        {
+          "label": "직전가 (11/23)",
+          "price": 9360
+        },
+        {
+          "label": "101일 평균가",
+          "price": 9814
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-18",
+          "price": 9800
+        },
+        {
+          "date": "2026-11-19",
+          "price": 9700
+        },
+        {
+          "date": "2026-11-23",
+          "price": 9360
+        },
+        {
+          "date": "2026-11-24",
+          "price": 7790
+        }
+      ],
+      "image_path": "downloads/wonkimchi-chive-2kg.png",
+      "status": "active",
+      "published_at": "2026-11-24T12:35:00+09:00"
+    },
+    {
+      "id": "woongjin-acv-24",
+      "title": "웅진식품 애사비 오리지널, 500ml, 24개",
+      "brand": "웅진식품",
+      "badge": "토스 하루특가 · 30일 내 최저가 · 4.9점 (리뷰 3,162건)",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "deadline": "오늘(11/24) 하루특가 · 타몰 최저 대비 30%↓",
+      "list_price": 28900,
+      "effective_price": 12900,
+      "effective_label": "토스 선착순 하루특가 (무료배송)",
+      "max_discount_price": 12900,
+      "max_discount_label": "토스 하루특가",
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 17900,
+      "avg_label": "쿠팡 일반 평균 17,845원",
+      "official_low": 12850,
+      "danawa_low": 18430,
+      "discount_pct": 55,
+      "discount_ref": "에누리 최저 18,430원 대비 30.0%↓ · 쿠팡 현재가 17,400원 대비 25.9%↓",
+      "discount_vs_avg_pct": 28,
+      "updated_at": "2026-11-24",
+      "source_note": "토스쇼핑 쉐어링크 하루특가·BEST 11위 직접 확인 (2026.11.24 12:31). 12,900원(500ml 개당 538원·100ml당 108원, 무료배송·내일도착·늦으면보상), 리뷰 3,162건 4.9점. 에누리 최저 18,430원(네멤 적립 18,145원) 대비 30.0%, 쿠팡 현재가 17,400원 대비 25.9% 저렴(토스 역대 최저 12,850원과 50원 차이).",
+      "affiliate_url": "https://toss.shopping/_m/3Bc6YUIg",
+      "affiliate_label": "토스쇼핑 쉐어링크",
+      "reasons": [
+        "에누리 최저 18,430원 대비 30.0% 저렴(5,530원↓), 쿠팡 현재가 17,400원 대비 25.9% 저렴",
+        "500ml 24병(총 12L) 12,900원 — 1병당 538원(100ml당 108원) 초가성비",
+        "제로슈거·알룰로스 3g·사과초모식초 1,000mg 함유로 리뷰 3,162건 평점 4.9점",
+        "무료배송·내일도착·늦으면보상 적용"
+      ],
+      "comparison_points": [
+        {
+          "label": "토스 하루특가 (무료)",
+          "price": 12900
+        },
+        {
+          "label": "쿠팡 현재가",
+          "price": 17400
+        },
+        {
+          "label": "에누리 타몰 최저",
+          "price": 18430
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-15",
+          "price": 23900
+        },
+        {
+          "date": "2026-11-19",
+          "price": 17900
+        },
+        {
+          "date": "2026-11-23",
+          "price": 14400
+        },
+        {
+          "date": "2026-11-24",
+          "price": 12900
+        }
+      ],
+      "image_path": "downloads/woongjin-acv-24.png",
+      "status": "active",
+      "published_at": "2026-11-24T12:35:00+09:00"
+    },
+    {
       "id": "ditwo-smart-mug-warmer",
       "title": "Ditwo 스마트 머그워머 보온 컵 받침대 4단 온도조절, 화이트, 1개",
       "brand": "Ditwo (윈신 유한회사)",
@@ -67,13 +199,13 @@
     },
     {
       "id": "merchent-vaseline-bodylotion-2l",
-      "title": "메르헨트 딥 모이스춰 바세린 바디로션, 1L, 2개",
+      "title": "(가격상승) 메르헨트 딥 모이스춰 바세린 바디로션, 1L, 2개",
       "brand": "토스쇼핑",
       "badge": "토스 바디로션 1위 · BEST 2위 · 리뷰 2,279건(4.6점)",
       "shipping": "무료배송 · 내일출발 (베스트판매자)",
       "deadline": "토스쇼핑 하루특가·선착순특가 · 지금 30일 내 최저가예요",
       "list_price": 40000,
-      "effective_price": 9990,
+      "effective_price": 11880,
       "effective_label": "토스쇼핑 하루특가 (무료배송)",
       "max_discount_price": null,
       "max_discount_label": null,
@@ -85,7 +217,7 @@
       "discount_pct": 75,
       "discount_ref": "판매자 표시가 40,000원 기준",
       "discount_vs_avg_pct": 17.3,
-      "updated_at": "2026-11-23",
+      "updated_at": "2026-11-24",
       "source_note": "토스 쉐어링크(sharelink.toss.im) 직접 확인 (2026.11.23 17:31). 선착순특가·하루특가 9,990원(1L 2개, 무료배송, 내일출발). 시세 대조: 에누리 가격비교 최저가 18,573원(무료배송) 대비 46.2% 저렴, 폴센트 쿠팡 최저가 14,900원 대비 33.0% 저렴, 지름알림 기준 지난 1년 최저가 9,990원 타이(보통가 12,080원 대비 2,090원 저렴). 토스쇼핑 바디로션 카테고리 1위·BEST 2위, 리뷰 2,279건(평점 4.6).",
       "affiliate_url": "https://toss.shopping/_m/FJXeEkF2",
       "affiliate_label": "토스쇼핑 쉐어링크",
@@ -118,6 +250,10 @@
         {
           "date": "2026-11-23",
           "price": 9990
+        },
+        {
+          "date": "2026-11-24",
+          "price": 11880
         }
       ],
       "image_path": "downloads/merchent-vaseline-bodylotion-2l.png",
@@ -126,13 +262,13 @@
     },
     {
       "id": "baskin-alien-milky-drink-10",
-      "title": "배스킨라빈스 엄마는 외계인 밀키 드링크, 300ml, 10개",
+      "title": "(가격상승) 배스킨라빈스 엄마는 외계인 밀키 드링크, 300ml, 10개",
       "brand": "토스쇼핑",
       "badge": "토스 BEST 14위 · 리뷰 329건(4.7점) · 베스트판매자",
       "shipping": "무료배송 · 내일도착 · 늦으면보상",
       "deadline": "토스쇼핑 오늘만 하루특가(자정 마감) · 지금 30일 내 최저가예요",
       "list_price": 29000,
-      "effective_price": 9900,
+      "effective_price": 10900,
       "effective_label": "토스쇼핑 하루특가 (무료배송)",
       "max_discount_price": null,
       "max_discount_label": null,
@@ -144,7 +280,7 @@
       "discount_pct": 65,
       "discount_ref": "판매자 표시가 29,000원 기준",
       "discount_vs_avg_pct": 23.3,
-      "updated_at": "2026-11-23",
+      "updated_at": "2026-11-24",
       "source_note": "토스 쉐어링크(sharelink.toss.im) 직접 확인 (2026.11.23 17:31). 오늘 하루특가(11/23 자정 마감) 9,900원(300ml 10개, 100ml당 330원·개당 990원, 무료배송·내일도착·늦으면보상). 시세 대조: 직전 토스 특가 12,900원(11/4·11/23 새벽) 대비 23.3% 저렴, 10/29 이후 최저가 11,600원을 깬 역대 최저가 경신, 쿠팡 판매가 15,600원(품절) 대비 36.5% 저렴.",
       "affiliate_url": "https://toss.shopping/_m/RHyw0xea",
       "affiliate_label": "토스쇼핑 쉐어링크",
@@ -177,6 +313,10 @@
         {
           "date": "2026-11-23",
           "price": 9900
+        },
+        {
+          "date": "2026-11-24",
+          "price": 10900
         }
       ],
       "image_path": "downloads/baskin-alien-milky-drink-10.png",
