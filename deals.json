@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T17:40:00+09:00",
+  "updated_at": "2026-11-25T19:38:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,53 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "sothing-zero-shoe-dryer",
+      "title": "소싱 제로 신발 건조기 DSHJ-S-1904 265g, 애쉬",
+      "brand": "소싱",
+      "badge": "쿠팡 추천 · 35%↓ · 리뷰 3,477건",
+      "shipping": "로켓배송 무료배송 · 내일(목) 11/26 도착",
+      "deadline": "2026-11-25 기준 할인가",
+      "list_price": 35900,
+      "effective_price": 23220,
+      "effective_label": "쿠팡 일반판매가",
+      "max_discount_price": 23220,
+      "max_discount_label": "로켓배송 무료",
+      "reward_note": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": null,
+      "avg_label": "정가 35,900원 대비 35% 할인(와우 가입 쿠폰가 18,220원 제외)",
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": 35,
+      "discount_ref": "정가 35,900원 → 23,220원 (무료 로켓배송)",
+      "discount_vs_avg_pct": null,
+      "updated_at": "2026-11-25",
+      "source_note": "쿠팡 로켓배송(2026.11.25 19:36 확인). 23,220원(무료배송·내일도착), 상품평 3,477건(4.5점·3,000명 이상 만족), KC인증 SU072397-19001.",
+      "affiliate_url": "https://link.coupang.com/a/iXUKkb1iKa",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "비·눈 오는 겨울철 운동화·부츠·털실내화 안쪽에 꽂아두는 265g 휴대용 발열 건조기",
+        "무풍 발열 방식이라 소음이 거의 없고(소음 작음 76%), 리뷰 3,477건 중 3,000명 이상 만족",
+        "정가 35,900원 → 23,220원(35% 할인) · 로켓배송 무료배송 내일 도착"
+      ],
+      "comparison_points": [
+        {
+          "label": "쿠팡 일반판매가",
+          "price": 23220
+        },
+        {
+          "label": "정가",
+          "price": 35900
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-25",
+          "price": 23220,
+          "note": "쿠팡 일반판매가 35% 할인"
+        }
+      ]
+    },
     {
       "id": "nanudam-pink-container-22",
       "title": "나누담 간편 핑크 직사각 밀폐용기, 480ml, 12개 + 750ml, 10개, 1세트",
