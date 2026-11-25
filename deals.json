@@ -22,50 +22,58 @@
       "max_discount_label": "하루특가",
       "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
       "avg_30d": 14970,
-      "avg_label": "시세(매당 15원) 대비 47%↓ · 역대 최저 7,000원 타이",
-      "unit_price": "1매당 7.8원 (900매)",
-      "score": 90,
-      "buy_url": "https://toss.shopping/_m/NlEuiQ99",
-      "buy_label": "토스쇼핑에서 보기",
-      "image": "https://hotdeal-note.github.io/images/clear-bamboo-kitchentowel-9.png",
-      "sources": [
+      "avg_label": "유사 키친타월 900매 시세(매당 15원) 대비 47%↓ · 역대 최저 7,000원 타이",
+      "official_low": null,
+      "danawa_low": 14970,
+      "discount_pct": 46,
+      "discount_ref": "정가 12,900원 → 토스 하루특가 7,000원(1매당 7.8원, 역대 최저 타이)",
+      "discount_vs_avg_pct": 53,
+      "updated_at": "2026-11-25",
+      "source_note": "토스쇼핑 쉐어링크(2026.11.25 12:36 확인). 하루특가·BEST 8위 7,000원(무료배송·내일도착·늦으면보상), 리뷰 4.7(133건), 베스트판매자.",
+      "affiliate_url": "https://toss.shopping/_m/NlEuiQ99",
+      "affiliate_label": "토스쇼핑 쉐어링크",
+      "reasons": [
+        "100매 9팩(총 900매) 7,000원 무료배송으로 1매당 7.8원 역대 최저가 타이",
+        "유사 대나무 3겹 키친타월 900매 시세(매당 15원, 14,970원) 대비 약 47~53% 저렴",
+        "토스쇼핑 '지금 30일 내 최저가예요' 배지 + BEST 8위 + 내일도착·늦으면보상"
+      ],
+      "comparison_points": [
         {
-          "mall": "토스쇼핑 하루특가",
-          "price": 7000,
-          "note": "무료배송 · 지금 30일 내 최저가"
+          "label": "토스 하루특가",
+          "price": 7000
         },
         {
-          "mall": "두더지 평소 핫딜가",
-          "price": 8100,
-          "note": "평소 매당 9원(8,100원)"
+          "label": "평소 핫딜가(매당 9원)",
+          "price": 8100
         },
         {
-          "mall": "유사 키친타월 900매 시세",
-          "price": 14970,
-          "note": "매당 약 15~17원 기준"
+          "label": "유사 시세(900매)",
+          "price": 14970
         }
       ],
       "history": [
         {
           "date": "2026-09-27",
-          "price": 8100
+          "price": 8100,
+          "note": "매당 9원"
         },
         {
           "date": "2026-10-22",
-          "price": 7200
+          "price": 7200,
+          "note": "매당 8원"
         },
         {
           "date": "2026-11-25",
-          "price": 7000
+          "price": 7000,
+          "note": "토스 하루특가 7,000원(역대 최저 타이)"
         }
-      ],
-      "note": "토스쇼핑 BEST 8위, 리뷰 4.7(133건), 베스트판매자. 1매당 7.8원으로 역대 최저가 타이."
+      ]
     },
     {
       "id": "mlekovita-milk-12",
       "title": "믈레코비타 3.5퍼센트 멸균우유, 1L, 12개",
       "brand": "믈레코비타",
-      "badge": "쿠팡 타임할인 · 리뷰 11.2만 · 89점",
+      "badge": "쿠팡 타임할인 · 리뷰 112,352건 · 89점",
       "shipping": "로켓배송 · 19,800원 이상 무료배송(와우회원 무료) · 내일(목) 11/26 도착",
       "deadline": "오늘 타임할인(재고·할인 변동 가능)",
       "list_price": 26800,
@@ -75,44 +83,52 @@
       "max_discount_label": "일반할인가",
       "reward_note": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
       "avg_30d": 18339,
-      "avg_label": "3주 평균 18,339원 대비 14.6%↓ · 에누리 타몰 최저 대비 25~30%↓",
-      "unit_price": "100ml당 131원 (개당 1,305원)",
-      "score": 89,
-      "buy_url": "https://link.coupang.com/a/iXqOCxE3rg",
-      "buy_label": "쿠팡에서 보기",
-      "image": "https://hotdeal-note.github.io/images/mlekovita-milk-12.png",
-      "sources": [
+      "avg_label": "최근 3주 평균 18,339원 대비 14.6%↓ · 에누리 타몰 최저(21,510원) 대비 27.2%↓",
+      "official_low": null,
+      "danawa_low": 21510,
+      "discount_pct": 41,
+      "discount_ref": "정가 26,800원 → 일반할인가 15,660원(41%↓, 최초 1회성 와우 가입 쿠폰가 11,660원 제외)",
+      "discount_vs_avg_pct": 15,
+      "updated_at": "2026-11-25",
+      "source_note": "쿠팡 상품 페이지 직접 확인(2026.11.25 12:37). 100ml당 131원(개당 1,305원), 상품평 112,352건(최고 87%), 한 달 3만명+ 구매, 소비기한 2027-02-07 이후.",
+      "affiliate_url": "https://link.coupang.com/a/iXqOCxE3rg",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "1L 12개 15,660원(100ml당 131원)으로 역대 최저(15,550원)와 110원 차이",
+        "에누리 타몰 최저(갓밀크 21,510원·리솔라 22,510원) 대비 27~30% 저렴",
+        "상품평 112,352건(최고 87%·맛 만족도 80%), 소비기한 2027-02-07 이후 넉넉"
+      ],
+      "comparison_points": [
         {
-          "mall": "쿠팡 로켓배송",
-          "price": 15660,
-          "note": "일반할인가(1회성 와우 가입 쿠폰가 11,660원 제외)"
+          "label": "쿠팡 일반할인가",
+          "price": 15660
         },
         {
-          "mall": "최근 3주 평균(로우차트)",
-          "price": 18339,
-          "note": "최근 3주 평균 대비 14.6%↓"
+          "label": "최근 3주 평균",
+          "price": 18339
         },
         {
-          "mall": "에누리 타몰 최저(갓밀크/리솔라)",
-          "price": 21510,
-          "note": "무료배송 기준 25~30% 저렴"
+          "label": "에누리 타몰 최저",
+          "price": 21510
         }
       ],
       "history": [
         {
           "date": "2026-11-17",
-          "price": 15550
+          "price": 15550,
+          "note": "역대 최저"
         },
         {
           "date": "2026-11-23",
-          "price": 15550
+          "price": 15550,
+          "note": "역대 최저 타이"
         },
         {
           "date": "2026-11-25",
-          "price": 15660
+          "price": 15660,
+          "note": "쿠팡 타임할인 15,660원"
         }
-      ],
-      "note": "상품평 112,352건(최고 87%), 한 달 3만명+ 구매, 소비기한 2027-02-07 이후. 역대 최저 15,550원과 110원 차이."
+      ]
     },
     {
       "id": "benetin-protein-choco-2kg",
@@ -128,44 +144,52 @@
       "max_discount_label": "하루특가",
       "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
       "avg_30d": 28972,
-      "avg_label": "25일 평균 28,972원 대비 24.4%↓ · 역대 최저 21,900원 갱신",
-      "unit_price": "100g당 1,095원 (총 2kg)",
-      "score": 88,
-      "buy_url": "https://toss.shopping/_m/rp9pD1rz",
-      "buy_label": "토스쇼핑에서 보기",
-      "image": "https://hotdeal-note.github.io/images/benetin-protein-choco-2kg.png",
-      "sources": [
+      "avg_label": "25일 평균 28,972원 대비 24.4%↓ · 직전가(24,800원) 대비 11.7%↓ 역대 최저 갱신",
+      "official_low": null,
+      "danawa_low": 24800,
+      "discount_pct": 58,
+      "discount_ref": "정가 53,000원 → 토스 하루특가 21,900원(100g당 1,095원, 역대 최저 갱신)",
+      "discount_vs_avg_pct": 24,
+      "updated_at": "2026-11-25",
+      "source_note": "토스쇼핑 쉐어링크(2026.11.25 12:36 확인). 하루특가·BEST 1위 21,900원(무료배송·내일도착·늦으면보상), 리뷰 4.8(1,042건), 베스트판매자. 식물성 분리대두단백(ISP).",
+      "affiliate_url": "https://toss.shopping/_m/rp9pD1rz",
+      "affiliate_label": "토스쇼핑 쉐어링크",
+      "reasons": [
+        "2kg 대용량 21,900원(100g당 1,095원)으로 직전가(24,800원) 대비 11.7%↓ 역대 최저 갱신",
+        "토스쇼핑 '지금 30일 내 최저가예요' 배지 + BEST 1위 + 리뷰 4.8(1,042건)",
+        "식물성 분리대두단백(ISP) 제품으로 유청 단백질이 부담스러운 분들에게 가성비 대안"
+      ],
+      "comparison_points": [
         {
-          "mall": "토스쇼핑 하루특가",
-          "price": 21900,
-          "note": "무료배송 · 지금 30일 내 최저가"
+          "label": "토스 하루특가",
+          "price": 21900
         },
         {
-          "mall": "직전 핫딜(11/23)",
-          "price": 24800,
-          "note": "11.7% 추가 하락"
+          "label": "직전 핫딜(11/23)",
+          "price": 24800
         },
         {
-          "mall": "25일 평균(랭킹박스)",
-          "price": 28972,
-          "note": "평균 대비 24.4% 저렴"
+          "label": "25일 평균가",
+          "price": 28972
         }
       ],
       "history": [
         {
           "date": "2026-10-31",
-          "price": 30900
+          "price": 30900,
+          "note": "최고가"
         },
         {
           "date": "2026-11-23",
-          "price": 24800
+          "price": 24800,
+          "note": "직전 핫딜"
         },
         {
           "date": "2026-11-25",
-          "price": 21900
+          "price": 21900,
+          "note": "토스 하루특가 21,900원(역대 최저 갱신)"
         }
-      ],
-      "note": "토스쇼핑 BEST 1위, 리뷰 4.8(1,042건), 베스트판매자. 식물성 분리대두단백(ISP) 기준 대용량 가성비."
+      ]
     },
     {
       "id": "homeanniz-mini-sealer",
