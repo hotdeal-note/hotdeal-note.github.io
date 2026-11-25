@@ -862,5 +862,59 @@
   "lowest_price": 10960,
   "last_price": 10960,
   "observations": 1
+ },
+ "ppomppu-pmarket-304589": {
+  "title": "도레이씨 안경닦이 5,340원, 무배 / 전제품 20% 할인 + 타이크로 증정",
+  "source": "ppomppu_pmarket",
+  "first_seen": "2026-11-25",
+  "last_seen": "2026-11-25",
+  "lowest_price": 5340,
+  "last_price": 5340,
+  "observations": 1
+ },
+ "etoland-9607388": {
+  "title": "선착순특가) 광동 바르게만든 흑염소진액, 70ml, 30포, 2세트",
+  "source": "etoland",
+  "first_seen": "2026-11-25",
+  "last_seen": "2026-11-25",
+  "lowest_price": 34210,
+  "last_price": 34210,
+  "observations": 1
+ },
+ "ppomppu-751740": {
+  "title": "오뚜기 부산 정통 진밀면(135Gx4봉)x4팩(총16봉)",
+  "source": "ppomppu",
+  "first_seen": "2026-11-25",
+  "last_seen": "2026-11-25",
+  "lowest_price": 9390,
+  "last_price": 9390,
+  "observations": 1
+ },
+ "dealbada-572966": {
+  "title": "일월 리오셀 브라운 카본매트",
+  "source": "dealbada",
+  "first_seen": "2026-11-25",
+  "last_seen": "2026-11-25",
+  "lowest_price": 18980,
+  "last_price": 18980,
+  "observations": 1
+ },
+ "eomisae-212947045": {
+  "title": "다슈 데일리 에어핏 드라이기 + 그루밍 토닉 30ml",
+  "source": "eomisae",
+  "first_seen": "2026-11-25",
+  "last_seen": "2026-11-25",
+  "lowest_price": 63000,
+  "last_price": 63000,
+  "observations": 1
+ },
+ "etoland-9607346": {
+  "title": "선착순특가) 쉼표365 구강청결제 스프레이, 쿨민트향, 14ml, 3개",
+  "source": "etoland",
+  "first_seen": "2026-11-25",
+  "last_seen": "2026-11-25",
+  "lowest_price": 8870,
+  "last_price": 8870,
+  "observations": 1
  }
 }
