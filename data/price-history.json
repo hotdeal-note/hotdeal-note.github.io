@@ -970,5 +970,59 @@
   "lowest_price": 9990,
   "last_price": 9990,
   "observations": 1
+ },
+ "etoland-9610500": {
+  "title": "호밍스 통새우볶음밥 x 5인분 + 소고기볶음밥 x 5인분",
+  "source": "etoland",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 15900,
+  "last_price": 15900,
+  "observations": 1
+ },
+ "dealbada-572976": {
+  "title": "1등급 한우 살치살/새우살 150g",
+  "source": "dealbada",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 17400,
+  "last_price": 17400,
+  "observations": 1
+ },
+ "eomisae-213089014": {
+  "title": "슈퍼적립) 칭따오 논알콜릭 330ml 24개",
+  "source": "eomisae",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 17000,
+  "last_price": 17000,
+  "observations": 1
+ },
+ "etoland-9610510": {
+  "title": "남해 해풍맞은 시금치 1kg",
+  "source": "etoland",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 6200,
+  "last_price": 6200,
+  "observations": 1
+ },
+ "dealbada-572980": {
+  "title": "즉석구이 곱창김 조미식탁김 15봉 세트",
+  "source": "dealbada",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 29200,
+  "last_price": 29200,
+  "observations": 1
+ },
+ "etoland-9610505": {
+  "title": "국내산 한돈1등급 제육볶음 300g 10팩",
+  "source": "etoland",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 27500,
+  "last_price": 27500,
+  "observations": 1
  }
 }
