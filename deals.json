@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T11:34:00+09:00",
+  "updated_at": "2026-11-26",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,126 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "livingwork-rubber-gloves-10",
+      "title": "생활공작소 고무장갑, 그레이, L, 10개",
+      "brand": "생활공작소",
+      "badge": "토스 선착순특가 · BEST 8위 · 92점",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "deadline": "2026-11-26 선착순특가",
+      "list_price": 45000,
+      "effective_price": 9990,
+      "effective_label": "토스 선착순특가",
+      "max_discount_price": 9990,
+      "max_discount_label": "30일 내 최저가",
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 25900,
+      "avg_label": "쿠팡 동일 10입(그레이·L) 25,900원 대비 61.4%↓ · 지마켓 23,720원 대비 57.9%↓(개당 999원)",
+      "official_low": null,
+      "danawa_low": 23720,
+      "discount_pct": 78,
+      "discount_ref": "정가 45,000원 → 토스 선착순특가 9,990원(10개입·개당 999원)",
+      "discount_vs_avg_pct": 61,
+      "updated_at": "2026-11-26",
+      "source_note": "토스쇼핑 쉐어링크(2026.11.26 12:35 확인). 선착순특가·지금 30일 내 최저가 배지·BEST 8위 9,990원(무료배송·내일도착·늦으면보상), 베스트판매자.",
+      "affiliate_url": "https://toss.shopping/_m/T3l6m4zz",
+      "affiliate_label": "토스쇼핑 쉐어링크",
+      "reasons": [
+        "생활공작소 그레이 L 사이즈 10개입 구성이 9,990원 무료배송(개당 999원)으로 30일 내 최저가",
+        "쿠팡 동일 10개입(25,900원) 대비 61.4%, 지마켓(23,720원) 대비 57.9% 저렴",
+        "내일도착·늦으면보상 및 베스트판매자 조건으로 실용성·가성비 최상"
+      ],
+      "comparison_points": [
+        {
+          "label": "토스 선착순특가",
+          "price": 9990
+        },
+        {
+          "label": "지마켓(10개입)",
+          "price": 23720
+        },
+        {
+          "label": "쿠팡(10개입)",
+          "price": 25900
+        },
+        {
+          "label": "정가",
+          "price": 45000
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-26",
+          "price": 9990,
+          "note": "토스 선착순특가(개당 999원)"
+        }
+      ]
+    },
+    {
+      "id": "vera-muhaeryeok-tissue-6",
+      "title": "베라 무해력 4ZERO 뽑아쓰는 미용티슈, 250매, 6팩",
+      "brand": "베라",
+      "badge": "토스 하루특가 · BEST 4위 · 90점",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "deadline": "2026-11-26 하루특가",
+      "list_price": 20900,
+      "effective_price": 4900,
+      "effective_label": "토스 하루특가",
+      "max_discount_price": 4900,
+      "max_discount_label": "역대 최저 타이",
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 7321,
+      "avg_label": "83일 평균 7,321원 대비 33.1%↓ · 직전가 6,390원 대비 23.3%↓ · 역대 최저 4,900원 타이(팩당 817원)",
+      "official_low": null,
+      "danawa_low": 6390,
+      "discount_pct": 77,
+      "discount_ref": "정가 20,900원 → 토스 하루특가 4,900원(1,500매·1매당 3.3원)",
+      "discount_vs_avg_pct": 33,
+      "updated_at": "2026-11-26",
+      "source_note": "토스쇼핑 쉐어링크(2026.11.26 12:35 확인). 하루특가·지금 30일 내 최저가 배지·BEST 4위 4,900원(무료배송·내일도착·늦으면보상), 리뷰 4.6(5,393건).",
+      "affiliate_url": "https://toss.shopping/_m/JtaEFszp",
+      "affiliate_label": "토스쇼핑 쉐어링크",
+      "reasons": [
+        "250매 6팩(총 1,500매) 4,900원 무료배송(팩당 817원·1매당 3.3원)으로 83일 추적 역대 최저가 타이",
+        "직전가 6,390원 대비 23.3%↓, 평균 7,321원 대비 33.1%↓, 두더지 평소 5원/매 대비 40% 저렴",
+        "무형광·무향·무포름알데히드·무인쇄 4ZERO 미용티슈(리뷰 4.6·5,393건)"
+      ],
+      "comparison_points": [
+        {
+          "label": "토스 하루특가(역대최저)",
+          "price": 4900
+        },
+        {
+          "label": "직전가(11/24)",
+          "price": 6390
+        },
+        {
+          "label": "83일 평균가",
+          "price": 7321
+        },
+        {
+          "label": "정가",
+          "price": 20900
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-10-22",
+          "price": 4900,
+          "note": "토스 하루특가(최저)"
+        },
+        {
+          "date": "2026-11-24",
+          "price": 6390,
+          "note": "직전가"
+        },
+        {
+          "date": "2026-11-26",
+          "price": 4900,
+          "note": "하루특가(역대 최저 타이)"
+        }
+      ]
+    },
     {
       "id": "niimbot-d110-label-printer",
       "title": "님봇 Niimbot D110 네임스티커 라벨프린터 (라벨지1개포함), D110M화이트+사각화이트12x40",
@@ -104,13 +224,13 @@
     },
     {
       "id": "nanudam-pink-container-22",
-      "title": "나누담 간편 핑크 직사각 밀폐용기, 480ml, 12개 + 750ml, 10개, 1세트",
+      "title": "(가격상승) 나누담 간편 핑크 직사각 밀폐용기, 480ml, 12개 + 750ml, 10개, 1세트",
       "brand": "나누담",
       "badge": "토스 선착순특가 · BEST 13위 · 88점",
       "shipping": "무료배송 · 내일도착 · 늦으면보상",
       "deadline": "2026-11-25 선착순특가",
       "list_price": 59900,
-      "effective_price": 10900,
+      "effective_price": 11900,
       "effective_label": "토스 선착순특가",
       "max_discount_price": 10900,
       "max_discount_label": "역대 최저 타이",
@@ -122,7 +242,7 @@
       "discount_pct": 82,
       "discount_ref": "정가 59,900원 → 토스 선착순특가 10,900원(22개 세트·개당 495원)",
       "discount_vs_avg_pct": 8,
-      "updated_at": "2026-11-25",
+      "updated_at": "2026-11-26",
       "source_note": "토스쇼핑 쉐어링크(2026.11.25 17:36 확인). 선착순특가·지금 30일 내 최저가 배지·BEST 13위 10,900원(무료배송·내일도착·늦으면보상), 리뷰 4.6(304건), 베스트판매자.",
       "affiliate_url": "https://toss.shopping/_m/vXW7Kg5d",
       "affiliate_label": "토스쇼핑 쉐어링크",
@@ -160,18 +280,23 @@
           "date": "2026-11-25",
           "price": 10900,
           "note": "오후 인하(역대 최저 타이)"
+        },
+        {
+          "date": "2026-11-26",
+          "price": 11900,
+          "note": "가격 상승"
         }
       ]
     },
     {
       "id": "sparkle-water-500ml-100",
-      "title": "스파클 생수 무라벨, 500ml, 100개",
+      "title": "(가격상승) 스파클 생수 무라벨, 500ml, 100개",
       "brand": "스파클",
       "badge": "토스 하루특가 · BEST 1위 · 86점",
       "shipping": "무료배송 · 오늘출발",
       "deadline": "2026-11-25 자정 마감(하루특가)",
       "list_price": 30000,
-      "effective_price": 15580,
+      "effective_price": 16900,
       "effective_label": "토스 하루특가",
       "max_discount_price": 15580,
       "max_discount_label": "하루특가",
@@ -183,7 +308,7 @@
       "discount_pct": 48,
       "discount_ref": "100ml당 31원(병당 156원) · 다나와 무료배송 23,650원 대비 34.1%↓",
       "discount_vs_avg_pct": 8,
-      "updated_at": "2026-11-25",
+      "updated_at": "2026-11-26",
       "source_note": "토스쇼핑 쉐어링크(2026.11.25 17:36 확인). 하루특가·BEST 1위 15,580원(무료배송·오늘출발), 리뷰 4.9(28,161건), 베스트판매자.",
       "affiliate_url": "https://toss.shopping/_m/9MDckpsA",
       "affiliate_label": "토스쇼핑 쉐어링크",
@@ -225,18 +350,23 @@
           "date": "2026-11-25",
           "price": 15580,
           "note": "토스 하루특가 15,580원"
+        },
+        {
+          "date": "2026-11-26",
+          "price": 16900,
+          "note": "가격 상승"
         }
       ]
     },
     {
       "id": "clear-bamboo-kitchentowel-9",
-      "title": "클리어 대나무 3겹 키친타월, 100매, 9팩",
+      "title": "(가격상승) 클리어 대나무 3겹 키친타월, 100매, 9팩",
       "brand": "클리어",
       "badge": "토스 하루특가 · BEST 8위 · 90점",
       "shipping": "무료배송 · 내일도착 · 늦으면보상",
       "deadline": "2026-11-25 자정 마감(선착순특가)",
       "list_price": 12900,
-      "effective_price": 7000,
+      "effective_price": 7700,
       "effective_label": "토스 하루특가",
       "max_discount_price": 7000,
       "max_discount_label": "하루특가",
@@ -248,7 +378,7 @@
       "discount_pct": 46,
       "discount_ref": "정가 12,900원 → 토스 하루특가 7,000원(1매당 7.8원, 역대 최저 타이)",
       "discount_vs_avg_pct": 53,
-      "updated_at": "2026-11-25",
+      "updated_at": "2026-11-26",
       "source_note": "토스쇼핑 쉐어링크(2026.11.25 12:36 확인). 하루특가·BEST 8위 7,000원(무료배송·내일도착·늦으면보상), 리뷰 4.7(133건), 베스트판매자.",
       "affiliate_url": "https://toss.shopping/_m/NlEuiQ99",
       "affiliate_label": "토스쇼핑 쉐어링크",
@@ -286,6 +416,11 @@
           "date": "2026-11-25",
           "price": 7000,
           "note": "토스 하루특가 7,000원(역대 최저 타이)"
+        },
+        {
+          "date": "2026-11-26",
+          "price": 7700,
+          "note": "가격 상승"
         }
       ]
     },
