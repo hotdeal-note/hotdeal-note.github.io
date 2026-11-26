@@ -1024,5 +1024,59 @@
   "lowest_price": 27500,
   "last_price": 27500,
   "observations": 1
+ },
+ "etoland-9610002": {
+  "title": "선착순특가) 샤오커오라 비타민C 종합사탕, 100g, 11개",
+  "source": "etoland",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 20365,
+  "last_price": 20365,
+  "observations": 1
+ },
+ "ppomppu-752104": {
+  "title": "널담 고단백 저당 베이글 24개",
+  "source": "ppomppu",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 20390,
+  "last_price": 20390,
+  "observations": 1
+ },
+ "dealbada-573001": {
+  "title": "케어웰 당뇨식 200 200ml 24개",
+  "source": "dealbada",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 23200,
+  "last_price": 23200,
+  "observations": 1
+ },
+ "eomisae-213187524": {
+  "title": "고기듬뿍 감자탕 5kg (8~10인분)",
+  "source": "eomisae",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 17900,
+  "last_price": 17900,
+  "observations": 1
+ },
+ "etoland-9609902": {
+  "title": "선착순특가) 날씬이 탄수화물컷, 60정, 4박스",
+  "source": "etoland",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 26010,
+  "last_price": 26010,
+  "observations": 1
+ },
+ "ppomppu-752106": {
+  "title": "국산 한돈 삼겹살 500g 2팩 총1kg",
+  "source": "ppomppu",
+  "first_seen": "2026-11-26",
+  "last_seen": "2026-11-26",
+  "lowest_price": 15900,
+  "last_price": 15900,
+  "observations": 1
  }
 }
