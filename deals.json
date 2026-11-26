@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T19:38:00+09:00",
+  "updated_at": "2026-11-26T11:34:00+09:00",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,53 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "niimbot-d110-label-printer",
+      "title": "님봇 Niimbot D110 네임스티커 라벨프린터 (라벨지1개포함), D110M화이트+사각화이트12x40",
+      "brand": "님봇",
+      "badge": "쿠팡 추천 · 36%↓ · 리뷰 5,413건",
+      "shipping": "무료배송 · 내일(금) 11/27 도착",
+      "deadline": "2026-11-26 기준 할인가",
+      "list_price": 55000,
+      "effective_price": 35000,
+      "effective_label": "쿠팡 일반할인가",
+      "max_discount_price": 35000,
+      "max_discount_label": "무료배송",
+      "reward_note": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": null,
+      "avg_label": "정가 55,000원 대비 36% 할인(와우 가입 쿠폰가 31,000원 제외)",
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": 36,
+      "discount_ref": "정가 55,000원 → 35,000원 (무료배송)",
+      "discount_vs_avg_pct": null,
+      "updated_at": "2026-11-26",
+      "source_note": "쿠팡(2026.11.26 11:32 확인). 35,000원(무료배송·내일도착), 상품평 5,413건(최고 90%·좋음 7%, 5,000명 이상 만족), D110M 2세대 모델+실리콘케이스+라벨지 1개 포함.",
+      "affiliate_url": "https://link.coupang.com/a/iY04XuP4Im",
+      "affiliate_label": "쿠팡 파트너스",
+      "reasons": [
+        "잉크·토너 없이 감열식 라벨지만 끼워 스마트폰 앱으로 바로 출력하는 무선 라벨프린터",
+        "주방 양념통·냉장고 소분·케이블 정리·네임스티커까지 활용 가능(리뷰 5,413건 중 5,000명 이상 만족)",
+        "정가 55,000원 → 35,000원(36% 할인) · 무료배송 내일 도착 · 1년 무상 AS"
+      ],
+      "comparison_points": [
+        {
+          "label": "쿠팡 일반할인가",
+          "price": 35000
+        },
+        {
+          "label": "정가",
+          "price": 55000
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-26",
+          "price": 35000,
+          "note": "쿠팡 일반할인가 36% 할인"
+        }
+      ]
+    },
     {
       "id": "sothing-zero-shoe-dryer",
       "title": "소싱 제로 신발 건조기 DSHJ-S-1904 265g, 애쉬",
