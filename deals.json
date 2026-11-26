@@ -9,6 +9,53 @@
   },
   "deals": [
     {
+      "id": "lkouy-ym06-lint-remover",
+      "title": "LKOUY 보풀제거기 휴대용 충전식 6중날 대용량 세탁소용, 화이트, YM06",
+      "brand": "LKOUY",
+      "badge": "계절·생활 꿀템 · 리뷰 7,152건",
+      "shipping": "로켓배송 · 19,800원 이상 무료배송(와우회원 무료) · 내일(금) 11/27 도착",
+      "deadline": "상시 (가격 변동 가능)",
+      "list_price": 93900,
+      "effective_price": 14900,
+      "effective_label": "일반할인가 (와우 가입 쿠폰 4,000원 제외)",
+      "max_discount_price": 14900,
+      "max_discount_label": "일반할인가",
+      "reward_note": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": null,
+      "avg_label": "상품평 7,152건(최고 86%·좋음 8% · 6,000명 이상 만족) · 한 달 7,000명+ 구매 · 6중날·3단 조절·LED 잔량 표시",
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": 84,
+      "discount_ref": "정가 93,900원 → 일반할인가 14,900원(와우 가입 쿠폰가 10,900원은 최초 1회성 제외)",
+      "discount_vs_avg_pct": null,
+      "updated_at": "2026-11-26",
+      "source_note": "쿠팡 로켓배송(2026.11.26 19:33 확인). 모델명 YM06(화이트), 6중날·7800RPM·3단 속도 조절·LED 배터리 잔량 표시·130ml 투명 대용량 보풀통·2중 잠금장치·USB C타입 충전식.",
+      "affiliate_url": "https://link.coupang.com/a/iZznTdoSf6",
+      "affiliate_label": "쿠팡 로켓배송",
+      "reasons": [
+        "상품평 7,152건(최고 86%·좋음 8%, 6,000명 이상 만족) 및 한 달 7,000명 이상 구매한 인기 충전식 보풀제거기",
+        "6중 회전날·3단계 속도 조절과 LED 배터리 잔량 표시, 130ml 투명 대용량 보풀통·2중 안전 잠금장치 탑재",
+        "주말 영하권 추위 앞두고 겨울 니트·코트 손질에 실용적(얇은 니트는 세게 누르지 않고 가볍게 대고 사용 권장)"
+      ],
+      "comparison_points": [
+        {
+          "label": "일반할인가(1개)",
+          "price": 14900
+        },
+        {
+          "label": "정가",
+          "price": 93900
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-26",
+          "price": 14900,
+          "note": "쿠팡 일반할인가(로켓배송 · 와우 가입 쿠폰 4,000원 제외)"
+        }
+      ]
+    },
+    {
       "id": "gyehyeokmyeong-chicken-4",
       "title": "계혁명 염지통닭, 600g, 4마리",
       "brand": "계혁명",
