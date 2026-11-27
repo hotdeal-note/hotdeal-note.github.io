@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27",
+  "updated_at": "2026-11-27 12:35",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -159,13 +159,13 @@
     },
     {
       "id": "gyehyeokmyeong-chicken-4",
-      "title": "계혁명 염지통닭, 600g, 4마리",
+      "title": "(가격상승) 계혁명 염지통닭, 600g, 4마리",
       "brand": "계혁명",
-      "badge": "토스 하루특가 · BEST 2위 · 90점",
+      "badge": "가격상승",
       "shipping": "무료배송 · 내일도착 · 늦으면보상",
       "deadline": "2026-11-26 자정 마감(하루특가)",
       "list_price": 30900,
-      "effective_price": 12700,
+      "effective_price": 16700,
       "effective_label": "토스 하루특가",
       "max_discount_price": 12700,
       "max_discount_label": "역대 최저가 갱신",
@@ -177,7 +177,7 @@
       "discount_pct": 59,
       "discount_ref": "정가 30,900원 → 토스 하루특가 12,700원(4마리·마리당 3,175원)",
       "discount_vs_avg_pct": 29,
-      "updated_at": "2026-11-26",
+      "updated_at": "2026-11-27 12:35",
       "source_note": "토스쇼핑 쉐어링크(2026.11.26 17:33 확인). 하루특가·지금 30일 내 최저가 배지·BEST 2위 12,700원(무료배송·내일도착·늦으면보상), 리뷰 4.7(1,114건).",
       "affiliate_url": "https://toss.shopping/_m/9n5TUUg1",
       "affiliate_label": "토스쇼핑 쉐어링크",
@@ -209,6 +209,11 @@
           "date": "2026-11-26",
           "price": 12700,
           "note": "토스 하루특가·역대 최저가(마리당 3,175원)"
+        },
+        {
+          "date": "2026-11-27",
+          "price": 16700,
+          "note": "가격상승 (12,700원 → 16,700원)"
         }
       ]
     },
@@ -269,13 +274,13 @@
     },
     {
       "id": "livingwork-rubber-gloves-10",
-      "title": "생활공작소 고무장갑, 그레이, L, 10개",
+      "title": "(가격상승) 생활공작소 고무장갑, 그레이, L, 10개",
       "brand": "생활공작소",
-      "badge": "토스 선착순특가 · BEST 8위 · 92점",
+      "badge": "가격상승",
       "shipping": "무료배송 · 내일도착 · 늦으면보상",
       "deadline": "2026-11-26 선착순특가",
       "list_price": 45000,
-      "effective_price": 9990,
+      "effective_price": 11900,
       "effective_label": "토스 선착순특가",
       "max_discount_price": 9990,
       "max_discount_label": "30일 내 최저가",
@@ -287,7 +292,7 @@
       "discount_pct": 78,
       "discount_ref": "정가 45,000원 → 토스 선착순특가 9,990원(10개입·개당 999원)",
       "discount_vs_avg_pct": 61,
-      "updated_at": "2026-11-26",
+      "updated_at": "2026-11-27 12:35",
       "source_note": "토스쇼핑 쉐어링크(2026.11.26 12:35 확인). 선착순특가·지금 30일 내 최저가 배지·BEST 8위 9,990원(무료배송·내일도착·늦으면보상), 베스트판매자.",
       "affiliate_url": "https://toss.shopping/_m/T3l6m4zz",
       "affiliate_label": "토스쇼핑 쉐어링크",
@@ -319,18 +324,23 @@
           "date": "2026-11-26",
           "price": 9990,
           "note": "토스 선착순특가(개당 999원)"
+        },
+        {
+          "date": "2026-11-27",
+          "price": 11900,
+          "note": "가격상승 (9,990원 → 11,900원)"
         }
       ]
     },
     {
       "id": "vera-muhaeryeok-tissue-6",
-      "title": "베라 무해력 4ZERO 뽑아쓰는 미용티슈, 250매, 6팩",
+      "title": "(가격상승) 베라 무해력 4ZERO 뽑아쓰는 미용티슈, 250매, 6팩",
       "brand": "베라",
-      "badge": "토스 하루특가 · BEST 4위 · 90점",
+      "badge": "가격상승",
       "shipping": "무료배송 · 내일도착 · 늦으면보상",
       "deadline": "2026-11-26 하루특가",
       "list_price": 20900,
-      "effective_price": 4900,
+      "effective_price": 6390,
       "effective_label": "토스 하루특가",
       "max_discount_price": 4900,
       "max_discount_label": "역대 최저 타이",
@@ -342,7 +352,7 @@
       "discount_pct": 77,
       "discount_ref": "정가 20,900원 → 토스 하루특가 4,900원(1,500매·1매당 3.3원)",
       "discount_vs_avg_pct": 33,
-      "updated_at": "2026-11-26",
+      "updated_at": "2026-11-27 12:35",
       "source_note": "토스쇼핑 쉐어링크(2026.11.26 12:35 확인). 하루특가·지금 30일 내 최저가 배지·BEST 4위 4,900원(무료배송·내일도착·늦으면보상), 리뷰 4.6(5,393건).",
       "affiliate_url": "https://toss.shopping/_m/JtaEFszp",
       "affiliate_label": "토스쇼핑 쉐어링크",
@@ -384,6 +394,11 @@
           "date": "2026-11-26",
           "price": 4900,
           "note": "하루특가(역대 최저 타이)"
+        },
+        {
+          "date": "2026-11-27",
+          "price": 6390,
+          "note": "가격상승 (4,900원 → 6,390원)"
         }
       ]
     },
@@ -3098,6 +3113,97 @@
         {
           "date": "2026-11-17",
           "price": 417660
+        }
+      ]
+    },
+    {
+      "id": "cheongwoo-chocopie-860g",
+      "title": "청우 초코파이 찰떡, 860g, 1박스 (40봉)",
+      "brand": "청우",
+      "badge": "90점 통과 · 역대 최저",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "effective_price": 8400,
+      "effective_label": "토스쇼핑 선착순특가",
+      "max_discount_price": 8400,
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 10200,
+      "official_low": 9900,
+      "danawa_low": 12050,
+      "discount_vs_avg_pct": 18,
+      "updated_at": "2026-11-27 12:35",
+      "source_note": "토스쇼핑 하루특가 · BEST 1위 · 리뷰 3,964건(4.6점)",
+      "affiliate_url": "https://toss.shopping/_m/Xcq9tjOn",
+      "reasons": [
+        "토스쇼핑 8,400원(40봉·100g당 977원)으로 8월 이후 역대 최저가 갱신",
+        "직전가 9,900원 대비 15.2%·평소 10,200원 대비 18%·쿠팡 유사 40p(12,050원) 대비 30.3% 저렴",
+        "무료배송 · 내일도착(늦으면보상) · 토스 BEST 1위"
+      ],
+      "comparison_points": [
+        "토스 하루특가: 8,400원 (무료배송)",
+        "직전가(11/24): 9,900원",
+        "평소 시세(100g당 1,186원): 약 10,200원",
+        "쿠팡 유사 40p: 12,050원"
+      ],
+      "history": [
+        {
+          "date": "2026-11-04",
+          "price": 10500,
+          "note": "토스 시세"
+        },
+        {
+          "date": "2026-11-24",
+          "price": 9900,
+          "note": "직전 특가"
+        },
+        {
+          "date": "2026-11-27",
+          "price": 8400,
+          "note": "토스 선착순특가 (역대 최저)"
+        }
+      ]
+    },
+    {
+      "id": "hanip-samgyeopsal-1kg",
+      "title": "한입 삼겹살, 500g, 2개 (총 1kg)",
+      "brand": "토스쇼핑",
+      "badge": "89점 통과 · 역대 최저",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "effective_price": 10280,
+      "effective_label": "토스쇼핑 선착순특가",
+      "max_discount_price": 10280,
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 15066,
+      "official_low": 11020,
+      "danawa_low": 13900,
+      "discount_vs_avg_pct": 32,
+      "updated_at": "2026-11-27 12:35",
+      "source_note": "토스쇼핑 하루특가 · BEST 5위 · 리뷰 1,739건(4.3점)",
+      "affiliate_url": "https://toss.shopping/_m/zBbui055",
+      "reasons": [
+        "1kg(500g×2) 10,280원(100g당 1,028원)으로 32일 추적 역대 최저가 갱신",
+        "최근 평균가 15,066원 대비 31.8%·직전가 11,020원 대비 6.7% 저렴",
+        "무료배송 · 내일도착(늦으면보상) · 한입 크기 손질"
+      ],
+      "comparison_points": [
+        "토스 하루특가: 10,280원 (무료배송)",
+        "직전가(11/24): 11,020원",
+        "32일 평균가: 15,066원"
+      ],
+      "history": [
+        {
+          "date": "2026-11-02",
+          "price": 13900,
+          "note": "토스 시세"
+        },
+        {
+          "date": "2026-11-24",
+          "price": 11020,
+          "note": "직전 특가"
+        },
+        {
+          "date": "2026-11-27",
+          "price": 10280,
+          "note": "토스 선착순특가 (역대 최저)"
         }
       ]
     }
