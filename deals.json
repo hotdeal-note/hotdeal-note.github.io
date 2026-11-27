@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,53 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "hululu-heated-deskmat",
+      "title": "HULULU 3단 온열조절 데스크 전기 매트, 그레이, 80×32cm",
+      "brand": "HULULU",
+      "badge": "겨울 책상 꿀템 · 3단 온열",
+      "shipping": "로켓배송 무료배송 · 내일(토) 새벽 도착",
+      "deadline": "쿠팡 일반할인가 기준(변동 가능)",
+      "list_price": 38800,
+      "effective_price": 28610,
+      "effective_label": "일반할인가 (와우 가입 쿠폰 24,320원 제외)",
+      "max_discount_price": 28610,
+      "max_discount_label": "일반할인가",
+      "reward_note": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": null,
+      "avg_label": "정가 38,800원 대비 26% 할인 · 한 달간 700명 이상 구매",
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": 26,
+      "discount_ref": "정가 38,800원 → 쿠팡 일반할인가 28,610원",
+      "discount_vs_avg_pct": null,
+      "updated_at": "2026-11-27",
+      "source_note": "쿠팡(2026.11.27 11:32 확인). 일반할인가 28,610원(무료배송), 상품평 686건(최고 95%·좋음 2%, 600명 이상 만족), KC인증 SU072723-21002B.",
+      "affiliate_url": "https://link.coupang.com/a/i0F0chyoua",
+      "affiliate_label": "쿠팡에서 보기",
+      "reasons": [
+        "카본 발열체로 10초 만에 빠르게 데워지고 45~55℃ 3단 온도 조절과 타이머 자동 꺼짐 지원",
+        "80×32cm 와이드 크기라 키보드와 마우스를 함께 올려도 넉넉하고, 상품평 686건 중 최고 95%",
+        "유리 책상 위 장시간 사용은 비권장이며, 휴식 알림 불빛은 별도 끄기 스위치가 없는 점 참고"
+      ],
+      "comparison_points": [
+        {
+          "label": "정가",
+          "price": 38800
+        },
+        {
+          "label": "쿠팡 일반할인가",
+          "price": 28610
+        }
+      ],
+      "price_history": [
+        {
+          "date": "11/27",
+          "price": 28610,
+          "note": "쿠팡 일반할인가"
+        }
+      ]
+    },
     {
       "id": "shokz-openrun-pro2-s820",
       "title": "샥즈 오픈 런 프로2 S820 골전도 블루투스 이어폰 OpenRun Pro 2, 블랙-BK",
