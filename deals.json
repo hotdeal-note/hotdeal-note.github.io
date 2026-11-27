@@ -3118,11 +3118,11 @@
     },
     {
       "id": "cheongwoo-chocopie-860g",
-      "title": "청우 초코파이 찰떡, 860g, 1박스 (40봉)",
+      "title": "(가격상승) 청우 초코파이 찰떡, 860g, 1박스 (40봉)",
       "brand": "청우",
-      "badge": "90점 통과 · 역대 최저",
+      "badge": "가격상승 (11,400원)",
       "shipping": "무료배송 · 내일도착 · 늦으면보상",
-      "effective_price": 8400,
+      "effective_price": 11400,
       "effective_label": "토스쇼핑 선착순특가",
       "max_discount_price": 8400,
       "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
@@ -3130,7 +3130,7 @@
       "official_low": 9900,
       "danawa_low": 12050,
       "discount_vs_avg_pct": 18,
-      "updated_at": "2026-11-27 12:35",
+      "updated_at": "2026-11-27 17:35",
       "source_note": "토스쇼핑 하루특가 · BEST 1위 · 리뷰 3,964건(4.6점)",
       "affiliate_url": "https://toss.shopping/_m/Xcq9tjOn",
       "reasons": [
@@ -3159,6 +3159,11 @@
           "date": "2026-11-27",
           "price": 8400,
           "note": "토스 선착순특가 (역대 최저)"
+        },
+        {
+          "date": "2026-11-27 17:35",
+          "price": 11400,
+          "note": "특가 종료·가격 상승"
         }
       ]
     },
@@ -3204,6 +3209,96 @@
           "date": "2026-11-27",
           "price": 10280,
           "note": "토스 선착순특가 (역대 최저)"
+        }
+      ]
+    },
+    {
+      "id": "duck-slice-2kg",
+      "title": "국내산 1등급 무항생제 오리로스 신선오리 슬라이스, 500g, 4개 (총 2kg)",
+      "brand": "토스쇼핑",
+      "badge": "90점 통과 · 역대 최저",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "effective_price": 20590,
+      "effective_label": "토스쇼핑 선착순특가",
+      "max_discount_price": 20590,
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 26500,
+      "official_low": 25900,
+      "danawa_low": 25400,
+      "discount_vs_avg_pct": 22,
+      "updated_at": "2026-11-27 17:35",
+      "source_note": "토스쇼핑 선착순특가 · BEST 7위 · 리뷰 187건(4.5점)",
+      "affiliate_url": "https://toss.shopping/_m/xjYUQjvg",
+      "reasons": [
+        "총 2kg(500g×4) 20,590원(100g당 1,030원)으로 역대 최저가 갱신",
+        "직전가 25,900원 대비 20.5%·역대 최고가 28,200원 대비 27.0% 저렴",
+        "국내산 1등급 무항생제 · 무료배송 · 내일도착(늦으면보상)"
+      ],
+      "comparison_points": [
+        "토스 선착순특가: 20,590원 (무료배송)",
+        "직전가(11/25): 25,900원",
+        "11월 최고가(11/21): 28,200원"
+      ],
+      "history": [
+        {
+          "date": "2026-11-17",
+          "price": 27700,
+          "note": "토스 시세"
+        },
+        {
+          "date": "2026-11-21",
+          "price": 28200,
+          "note": "최고가"
+        },
+        {
+          "date": "2026-11-25",
+          "price": 25900,
+          "note": "직전 특가"
+        },
+        {
+          "date": "2026-11-27",
+          "price": 20590,
+          "note": "토스 선착순특가 (역대 최저)"
+        }
+      ]
+    },
+    {
+      "id": "bhc-burrito-10pack",
+      "title": "bhc 브리또, 리치치즈 치킨 5팩 + 핫치킨 5팩 (총 10팩)",
+      "brand": "토스쇼핑",
+      "badge": "89점 통과 · 30일 최저",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "effective_price": 19900,
+      "effective_label": "토스쇼핑 선착순특가",
+      "max_discount_price": 19900,
+      "reward_note": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": 25360,
+      "official_low": 24910,
+      "danawa_low": 24910,
+      "discount_vs_avg_pct": 20,
+      "updated_at": "2026-11-27 17:35",
+      "source_note": "토스쇼핑 선착순특가 · BEST 14위 · 리뷰 19건(4.8점)",
+      "affiliate_url": "https://toss.shopping/_m/h0EyQqd",
+      "reasons": [
+        "총 10팩(125g×10) 19,900원(팩당 1,990원)으로 30일 내 최저가",
+        "G마켓 동일 10팩 최저 쿠폰가 24,910원 대비 5,010원(20.1%) 저렴",
+        "베스트판매자 · 무료배송 · 내일도착(늦으면보상)"
+      ],
+      "comparison_points": [
+        "토스 선착순특가: 19,900원 (팩당 1,990원 · 무배)",
+        "G마켓 동일 10팩 최저가: 24,910원 (쿠폰가)",
+        "G마켓 타 셀러 10팩: 25,810원"
+      ],
+      "history": [
+        {
+          "date": "2026-11-27",
+          "price": 24910,
+          "note": "G마켓 최저 쿠폰가"
+        },
+        {
+          "date": "2026-11-27",
+          "price": 19900,
+          "note": "토스 선착순특가 (팩당 1,990원)"
         }
       ]
     }
