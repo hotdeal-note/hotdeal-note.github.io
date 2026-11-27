@@ -1186,5 +1186,59 @@
   "lowest_price": 11900,
   "last_price": 11900,
   "observations": 1
+ },
+ "etoland-9612649": {
+  "title": "선착순특가) 국내산 가을 봄동, 2kg, 1박스",
+  "source": "etoland",
+  "first_seen": "2026-11-27",
+  "last_seen": "2026-11-27",
+  "lowest_price": 7730,
+  "last_price": 7730,
+  "observations": 1
+ },
+ "ppomppu-752402": {
+  "title": "고시히카리 상등급 10kg",
+  "source": "ppomppu",
+  "first_seen": "2026-11-27",
+  "last_seen": "2026-11-27",
+  "lowest_price": 32580,
+  "last_price": 32580,
+  "observations": 1
+ },
+ "dealbada-573019": {
+  "title": "얼라이브 멀티 비타 구미 60정 2개",
+  "source": "dealbada",
+  "first_seen": "2026-11-27",
+  "last_seen": "2026-11-27",
+  "lowest_price": 28280,
+  "last_price": 28280,
+  "observations": 1
+ },
+ "etoland-9612485": {
+  "title": "선착순특가) 이디야 컵커피, 5종 혼합, 300ml, 20개",
+  "source": "etoland",
+  "first_seen": "2026-11-27",
+  "last_seen": "2026-11-27",
+  "lowest_price": 25140,
+  "last_price": 25140,
+  "observations": 1
+ },
+ "ppomppu-752405": {
+  "title": "송병장 대용량핫팩 150G 30개",
+  "source": "ppomppu",
+  "first_seen": "2026-11-27",
+  "last_seen": "2026-11-27",
+  "lowest_price": 12900,
+  "last_price": 12900,
+  "observations": 1
+ },
+ "dealbada-573020": {
+  "title": "생활맥주 논알콜 355ml 6캔 + 팝콘 10봉 + 전용잔세트",
+  "source": "dealbada",
+  "first_seen": "2026-11-27",
+  "last_seen": "2026-11-27",
+  "lowest_price": 28300,
+  "last_price": 28300,
+  "observations": 1
  }
 }
