@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-28 17:36",
+  "updated_at": "2026-11-28 19:35",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,46 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "prosalim-eraser-vacuum",
+      "title": "프로살림 지우개싹 청소기, 화이트, 1개",
+      "category": "문구·오피스",
+      "mall": "쿠팡",
+      "current_price": 15700,
+      "list_price": 29900,
+      "discount_rate": 47,
+      "unit_price": "15,700원",
+      "shipping": "무료배송 · 내일(일) 11/29 도착",
+      "score": 88,
+      "affiliate_url": "https://link.coupang.com/a/i2TbfDS1tc",
+      "affiliate_label": "쿠팡에서 보기",
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "reasons": [
+        "한 달간 1,000명 이상 구매 · 상품평 3,963건 (최고 94% · 3,000명 이상 만족)",
+        "정가 29,900원 → 일반할인가 15,700원 (47% 할인 · 와우 가입 쿠폰가 11,700원 제외)",
+        "무선 코드 충전식 · 한 손 크기(110×85mm)로 지우개 가루·과자 부스러기·키보드 먼지 청소"
+      ],
+      "comparison_points": [
+        {
+          "label": "쿠팡 일반할인가 (현재가)",
+          "price": 15700,
+          "note": "무료배송 · 내일(일) 도착"
+        },
+        {
+          "label": "판매자 표기 정가",
+          "price": 29900,
+          "note": "47% 할인"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-28",
+          "price": 15700
+        }
+      ],
+      "posted_at": "2026-11-28 19:35",
+      "status": "active"
+    },
     {
       "id": "zigbee-toothbrush-22",
       "title": "지그비 컴팩트 초미세모 칫솔, 22개입, 1세트",
