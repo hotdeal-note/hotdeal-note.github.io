@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-28 12:35",
+  "updated_at": "2026-11-28 17:36",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,112 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "zigbee-toothbrush-22",
+      "title": "지그비 컴팩트 초미세모 칫솔, 22개입, 1세트",
+      "category": "생활·욕실",
+      "mall": "토스쇼핑",
+      "current_price": 7500,
+      "list_price": 31900,
+      "discount_rate": 76,
+      "unit_price": "개당 341원",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "score": 89,
+      "affiliate_url": "https://toss.shopping/_m/Fh3qmukp",
+      "affiliate_label": "토스쇼핑에서 보기",
+      "disclosure": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "reasons": [
+        "역대 최저가 7,500원 갱신 (직전가 10,900원 대비 31.2%↓ · 최고가 12,900원 대비 41.9%↓)",
+        "개당 341원 · 초미세모 22개입 대용량 세트",
+        "토스 BEST 5위 · 리뷰 306건 평점 4.6 · 베스트판매자"
+      ],
+      "comparison_points": [
+        {
+          "label": "토스 선착순 하루특가 (역대 최저)",
+          "price": 7500,
+          "note": "개당 341원 · 무료배송"
+        },
+        {
+          "label": "직전 토스 특가 (11/23)",
+          "price": 10900,
+          "note": "3,400원(31.2%) 추가 인하"
+        },
+        {
+          "label": "토스 최고가 (11/02)",
+          "price": 12900,
+          "note": "41.9% 비쌈"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-02",
+          "price": 12900
+        },
+        {
+          "date": "2026-11-23",
+          "price": 10900
+        },
+        {
+          "date": "2026-11-28",
+          "price": 7500
+        }
+      ],
+      "posted_at": "2026-11-28 17:36",
+      "status": "active"
+    },
+    {
+      "id": "liberty-overnight-20",
+      "title": "리버티 딥슬립 입는 오버나이트, 중형, 4매입, 5팩 (총 20매)",
+      "category": "생활·위생",
+      "mall": "토스쇼핑",
+      "current_price": 8250,
+      "list_price": 24500,
+      "discount_rate": 66,
+      "unit_price": "매당 413원",
+      "shipping": "무료배송 · 내일도착 · 늦으면보상",
+      "score": 89,
+      "affiliate_url": "https://toss.shopping/_m/PYNGZ169",
+      "affiliate_label": "토스쇼핑에서 보기",
+      "disclosure": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "reasons": [
+        "추적 역대 최저가 8,250원 타이 · 평소 시세(매당 575원·약 11,500원) 대비 28%↓",
+        "매당 413원 · 총 20매 구성",
+        "토스 BEST 10위 · 리뷰 306건 평점 4.8 · 베스트판매자"
+      ],
+      "comparison_points": [
+        {
+          "label": "토스 선착순 하루특가 (역대 최저)",
+          "price": 8250,
+          "note": "매당 413원 · 무료배송"
+        },
+        {
+          "label": "평소 핫딜 시세 (중간값)",
+          "price": 11500,
+          "note": "매당 575원 · 28% 비쌈"
+        },
+        {
+          "label": "판매자 표기 정가",
+          "price": 24500,
+          "note": "66% 할인"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-23",
+          "price": 8900
+        },
+        {
+          "date": "2026-11-07",
+          "price": 8250
+        },
+        {
+          "date": "2026-11-28",
+          "price": 8250
+        }
+      ],
+      "posted_at": "2026-11-28 17:36",
+      "status": "active"
+    },
     {
       "id": "yejinwon-abc-juice-35",
       "title": "예진원 국내산 ABC주스, 80ml, 35개",
