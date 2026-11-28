@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27 12:35",
+  "updated_at": "2026-11-28 11:34",
   "site": {
     "title": "실시간 핫딜 시세",
     "tagline": "오늘의 온라인핫딜 최저가 비교",
@@ -8,6 +8,53 @@
     "pending_note": "구매 링크를 준비하고 있어요. 준비되는 대로 이 자리에서 바로 구매하실 수 있습니다."
   },
   "deals": [
+    {
+      "id": "jurom-magnetic-holder",
+      "title": "쥬롬 마그네틱 선정리 홀더, 1세트(6개), 화이트",
+      "brand": "쥬롬",
+      "badge": "책상 선정리 꿀템 · 자석 개폐",
+      "shipping": "로켓배송 19,800원 이상(와우 무료배송) · 내일(일) 도착",
+      "deadline": "쿠팡 일반판매가 기준(변동 가능)",
+      "list_price": null,
+      "effective_price": 6300,
+      "effective_label": "일반판매가 (와우 가입 쿠폰 2,300원 제외)",
+      "max_discount_price": 6300,
+      "max_discount_label": "일반판매가",
+      "reward_note": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "avg_30d": null,
+      "avg_label": "1세트(6개입) 6,300원(개당 1,050원) · 한 달간 1,000명 이상 구매",
+      "official_low": null,
+      "danawa_low": null,
+      "discount_pct": null,
+      "discount_ref": "쿠팡 일반판매가 6,300원 (1세트 6개입)",
+      "discount_vs_avg_pct": null,
+      "updated_at": "2026-11-28",
+      "source_note": "쿠팡(2026.11.28 11:32 확인). 일반판매가 6,300원(와우 무료배송·내일 도착), 상품평 1,547건(최고 86%·좋음 8%, 1,000명 이상 만족), 접착스티커 기본 포함.",
+      "affiliate_url": "https://link.coupang.com/a/i2kSTz6n0u",
+      "affiliate_label": "쿠팡에서 보기",
+      "reasons": [
+        "자석 개폐 방식이라 케이블을 넣고 뺄 때 한 손으로 톡 열어 바로 고정하고 뺄 수 있음",
+        "접착스티커가 기본 포함돼 책상·벽·모니터 옆 등 원하는 자리에 바로 붙이고 6개입 6,300원으로 가성비 우수",
+        "접착식이라 한 번 붙이면 위치 옮기기가 어렵고, 매우 두꺼운 케이블은 고정이 약할 수 있는 점 참고"
+      ],
+      "comparison_points": [
+        {
+          "label": "쿠팡 일반판매가 (6개입)",
+          "price": 6300
+        },
+        {
+          "label": "개당 체감가",
+          "price": 1050
+        }
+      ],
+      "price_history": [
+        {
+          "date": "2026-11-28",
+          "price": 6300,
+          "note": "쿠팡 일반판매가(와우 무료배송)"
+        }
+      ]
+    },
     {
       "id": "hululu-heated-deskmat",
       "title": "HULULU 3단 온열조절 데스크 전기 매트, 그레이, 80×32cm",
